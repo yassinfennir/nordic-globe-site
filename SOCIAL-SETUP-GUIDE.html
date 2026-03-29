@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sosiaalisen median asetusopas — Nordic Globe</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#0a1628">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1877F2;
+            --primary-dark: #1260cc;
+            --green: #14F195;
+            --dark: #0a0a0f;
+            --dark-blue: #0f1a2e;
+            --dark-card: #111827;
+            --white: #ffffff;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--dark);
+            color: rgba(255,255,255,0.85);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { text-decoration: none; color: var(--green); transition: color 0.3s; }
+        a:hover { color: #0fb97a; }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; color: var(--white); }
+
+        /* Nav */
+        .nav-simple {
+            background: var(--dark);
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            position: sticky; top: 0; z-index: 100;
+            backdrop-filter: blur(16px);
+        }
+        .nav-simple .container {
+            max-width: 1200px; margin: 0 auto; padding: 0 24px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-simple img { height: 38px; }
+        .nav-simple a.back-link {
+            color: rgba(255,255,255,0.7); font-size: 0.9rem;
+            display: flex; align-items: center; gap: 6px;
+        }
+        .nav-simple a.back-link:hover { color: var(--green); }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-blue) 100%);
+            padding: 80px 0 60px; text-align: center;
+            border-bottom: 1px solid rgba(20,241,149,0.1);
+        }
+        .hero h1 { font-size: 2.6rem; font-weight: 700; margin-bottom: 12px; }
+        .hero h1 span { color: var(--green); }
+        .hero p { color: rgba(255,255,255,0.6); font-size: 1.05rem; max-width: 650px; margin: 0 auto; }
+        .badge { display: inline-block; background: rgba(20,241,149,0.1); color: var(--green); font-size: 0.78rem; font-weight: 600; padding: 6px 16px; border-radius: 50px; margin-bottom: 18px; border: 1px solid rgba(20,241,149,0.2); text-transform: uppercase; letter-spacing: 0.05em; }
+
+        /* TOC */
+        .toc {
+            max-width: 900px; margin: -30px auto 0; padding: 0 24px; position: relative; z-index: 10;
+        }
+        .toc-inner {
+            background: var(--dark-card); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius-lg); padding: 32px 36px;
+        }
+        .toc h3 { font-size: 1rem; margin-bottom: 16px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+        .toc ol { margin-left: 20px; }
+        .toc li { margin-bottom: 8px; }
+        .toc a { color: rgba(255,255,255,0.7); font-size: 0.95rem; }
+        .toc a:hover { color: var(--green); }
+
+        /* Container */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .content { max-width: 900px; margin: 0 auto; padding: 60px 24px 80px; }
+
+        /* Platform Section */
+        .platform {
+            margin-bottom: 64px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+        .platform:first-child { border-top: none; }
+        .platform-header {
+            display: flex; align-items: center; gap: 16px; margin-bottom: 28px;
+        }
+        .platform-icon {
+            width: 56px; height: 56px; border-radius: var(--radius-md);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; color: var(--white); flex-shrink: 0;
+        }
+        .platform-icon.google { background: linear-gradient(135deg, #4285F4, #34A853); }
+        .platform-icon.linkedin { background: #0A66C2; }
+        .platform-icon.facebook { background: #1877F2; }
+        .platform-icon.instagram { background: linear-gradient(135deg, #F58529, #DD2A7B, #8134AF); }
+        .platform-icon.directory { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
+
+        .platform h2 { font-size: 1.6rem; font-weight: 700; }
+        .platform h2 span { color: var(--green); font-size: 0.8rem; font-weight: 500; }
+
+        /* Steps */
+        .step {
+            background: var(--dark-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius-md);
+            padding: 24px 28px;
+            margin-bottom: 16px;
+        }
+        .step-num {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 28px; height: 28px; border-radius: 50%;
+            background: rgba(20,241,149,0.1); color: var(--green);
+            font-size: 0.82rem; font-weight: 700; margin-right: 10px;
+            flex-shrink: 0;
+        }
+        .step h4 { font-size: 1rem; font-weight: 600; margin-bottom: 10px; display: flex; align-items: center; }
+        .step p, .step li { color: rgba(255,255,255,0.7); font-size: 0.93rem; }
+        .step ul { margin: 8px 0 0 24px; }
+        .step li { margin-bottom: 6px; }
+
+        /* Copyable text */
+        .copy-block {
+            background: rgba(20,241,149,0.04);
+            border: 1px solid rgba(20,241,149,0.12);
+            border-radius: var(--radius-sm);
+            padding: 16px 20px;
+            margin: 12px 0;
+            position: relative;
+            font-size: 0.92rem;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.6;
+            white-space: pre-wrap;
+            cursor: pointer;
+        }
+        .copy-block::after {
+            content: "KOPIOI";
+            position: absolute; top: 8px; right: 10px;
+            font-size: 0.65rem; font-weight: 700; letter-spacing: 0.06em;
+            color: var(--green); background: rgba(20,241,149,0.08);
+            padding: 3px 10px; border-radius: 4px;
+        }
+        .copy-block:hover { border-color: rgba(20,241,149,0.3); }
+        .copy-block.copied::after { content: "KOPIOITU \u2713"; }
+
+        .info-card {
+            background: rgba(24,119,242,0.06);
+            border: 1px solid rgba(24,119,242,0.15);
+            border-radius: var(--radius-md);
+            padding: 20px 24px; margin: 16px 0;
+        }
+        .info-card p { margin-bottom: 4px; color: rgba(255,255,255,0.75); font-size: 0.93rem; }
+        .info-card strong { color: var(--white); }
+
+        .label { font-size: 0.78rem; font-weight: 600; color: var(--green); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; display: block; }
+
+        /* Directory table */
+        .dir-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+        .dir-table th, .dir-table td {
+            padding: 12px 16px; text-align: left; font-size: 0.9rem;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .dir-table th { color: rgba(255,255,255,0.5); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; }
+        .dir-table td { color: rgba(255,255,255,0.75); }
+        .dir-table td a { color: var(--green); }
+        .dir-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+        /* Footer */
+        .footer {
+            background: var(--dark); color: rgba(255,255,255,0.4);
+            padding: 40px 0; text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            font-size: 0.84rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 60px 0 40px; }
+            .hero h1 { font-size: 1.8rem; }
+            .toc-inner { padding: 24px 20px; }
+            .content { padding: 40px 16px 60px; }
+            .step { padding: 18px 16px; }
+            .platform-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .dir-table { font-size: 0.82rem; }
+            .dir-table th, .dir-table td { padding: 8px 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav-simple">
+        <div class="container">
+            <a href="/"><img src="logo-icon.png" alt="Nordic Globe" loading="lazy"></a>
+            <a href="/" class="back-link"><i class="fa-solid fa-arrow-left"></i> Takaisin etusivulle</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="badge"><i class="fa-solid fa-share-nodes"></i> Sosiaalinen media</div>
+            <h1>Social Media <span>Setup Guide</span></h1>
+            <p>Vaiheittainen opas Nordic Globe Oy:n sosiaalisen median profiilien ja yrityshakemistojen perustamiseen.</p>
+        </div>
+    </section>
+
+    <div class="toc">
+        <div class="toc-inner">
+            <h3><i class="fa-solid fa-list"></i> Sis&auml;llys</h3>
+            <ol>
+                <li><a href="#google">Google Business Profile</a></li>
+                <li><a href="#linkedin">LinkedIn-yrityssivu</a></li>
+                <li><a href="#facebook">Facebook-sivu</a></li>
+                <li><a href="#instagram">Instagram-profiili</a></li>
+                <li><a href="#hakemistot">Suomalaiset yrityshakemistot (10 kpl)</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <main class="content">
+
+        <!-- ==================== GOOGLE BUSINESS PROFILE ==================== -->
+        <div class="platform" id="google">
+            <div class="platform-header">
+                <div class="platform-icon google"><i class="fa-brands fa-google"></i></div>
+                <div>
+                    <h2>Google Business Profile</h2>
+                    <span style="color:rgba(255,255,255,0.5);font-size:0.88rem;">business.google.com</span>
+                </div>
+            </div>
+
+            <div class="step">
+                <h4><span class="step-num">1</span> Yrityksen nimi</h4>
+                <div class="copy-block" onclick="copyText(this)">Nordic Globe Oy</div>
+            </div>
+
+            <div class="step">
+                <h4><span class="step-num">2</span> P&auml;&auml;kategoria</h4>
+                <div class="copy-block" onclick="copyText(this)">Siivouspalvelu (Cleaning service)</div>
+                <p style="margin-top:8px;"><span class="label">Lis&auml;kategoriat</span></p>
+                <ul>
+                    <li>Commercial cleaning service</li>
+                    <li>Office cleaning service</li>
+                    <li>Building cleaning service</li>
+                    <li>Janitorial service</li>
+                    <li>Window cleaning service</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h4><span class="step-num">3</span> Yrityksen kuvaus (750 merkki&auml;)</h4>
+                <div class="copy-block" onclick="copyText(this)">Nordic Globe Oy on vuonna 2009 perustettu suomalainen siivousalan yritys, joka tarjoaa ammattimaisia siivouspalveluja koko Suomessa. Palveluihimme kuuluvat myym&auml;l&auml;siivous, toimistosiivous, porrassiivous, rakennussiivous, kotisiivous, kuntosalisiivous, ravintolasiivous, ikkunapesut sek&auml; erikoissiivous. Yli 15 vuoden kokemuksella ja yli 2 500 tyytyv&auml;isell&auml; asiakkaalla olemme luotettava kumppani yrityksille ja taloyhti&ouml;ille. Nordic Globe Oy on Bisnode Platinum AAA -luokiteltu yritys, ja noudatamme ISO 9001 ja ISO 14001 -standardeja. Palvelemme p&auml;&auml;kaupunkiseudulla (Espoo, Helsinki, Vantaa) sek&auml; Tampereella, Turussa, Oulussa, Jyv&auml;skyl&auml;ss&auml;, Kuopiossa ja Lahdessa. Pyyd&auml; ilmainen tarjous!</div>
+            </div>
+
+            <div class="step">
+                <h4><span class="step-num">4</span> Yhteystiedot</h4>
+                <div class="info-card">
+                    <p><strong>Puhelin:</strong> +358 40 7770086</p>
+                    <p><strong>S&auml;hk&ouml;posti:</strong> info@nordicglobe.fi</p>
+                    <p><strong>Verkkosivu:</strong> https://nordicglobe.co</p>
+                    <p><strong>Osoite:</strong> Peuraniitty 5 a 41, 02750 Espoo</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <h4><span class="step-num">5</span> Palvelualueet</h4>
+                <ul>
+                    <li>Espoo</li>
+                    <li>Helsinki</li>
+                    <li>Vantaa</li>
+                    <li>Tampere</li>
+                    <li>Turku</li>
+                    <li>Oulu</li>
+                    <li>Jyv&auml;skyl&auml;</li>
+                    <li>Kuopio</li>
+                    <li>Lahti</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h4><span class="step-num">6</span> Palvelut (lis&auml;&auml; yksitellen)</h4>
+                <ul>
+                    <li>Myym&auml;l&auml;siivous</li>
+                    <li>Toimistosiivous</li>
+                    <li>Porrassiivous</li>
+                    <li>Rakennussiivous</li>
+                    <li>Kotisiivous</li>
+                    <li>Kuntosalisiivous</li>
+                    <li>Ravintolasiivous</li>
+                    <li>Ikkunapesut</li>
+                    <li>Erikoissiivous</li>
+                    <li>Loppusiivous / Muuttosiivous</li>
+                    <li>Peruspesut ja vahaukset</li>
+                    <li>Yll&auml;pitosiivous</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h4><span class="step-num">7</span> Valokuvat</h4>
+                <p>Lis&auml;&auml; v&auml;hint&auml;&auml;n:</p>
+                <ul>
+                    <li><strong>Logo</strong> &mdash; logo.png</li>
+                    <li><strong>Kansikuva</strong> &mdash; leveysuhde 16:9, siivousty&ouml; k&auml;ynniss&auml;</li>
+                    <li><strong>3&ndash;5 ty&ouml;kuvaa</strong> &mdash; myym&auml;l&auml;siivous, toimistosiivous, tiimi</li>
+                    <li><strong>Sertifikaatit</strong> &mdash; Platinum AAA, Tilaajavastuu, Luotettava Kumppani</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h4><span class="step-num">8</span> Aukioloajat</h4>
+                <div class="copy-block" onclick="copyText(this)">Ma&ndash;Pe: 07:00&ndash;18:00
+La: Suljettu
+Su: Suljettu</div>
+            </div>
+        </div>
+
+        <!-- ==================== LINKEDIN ==================== -->
+        <div class="platform" id="linkedin">
+            <div class="platform-header">
+                <div class="platform-icon linkedin"><i class="fa-brands fa-linkedin-in"></i></div>
+                <div>
+                    <h2>LinkedIn-yrityssivu</h2>
+                    <span style="color:rgba(255,255,255,0.5);font-size:0.88rem;">linkedin.com/company/</span>
+                </div>
+            </div>
+
+            <div class="step">
+                <h4><span class="step-num">1</span> Yrityksen nimi</h4>
+                <div class="copy-block" onclick="copyText(this)">Nordic Globe Oy</div>
+            </div>
+
+            <div class="step">
+                <h4><span class="step-num">2</span> Tagline (120 merkki&auml;)</h4>
+                <div class="copy-block" onclick="copyText(this)">Ammattimainen siivouspalvelu yrityksille ja taloyhti&ouml;ille koko Suomessa | Platinum AAA | ISO 9001 &amp; 14001</div>
+            </div>
+
+            <div class="step">
+                <h4><span class="step-num">3</span> Kuvaus (About)</h4>
+                <div class="copy-block" onclick="copyText(this)">Nordic Globe Oy on vuonna 2009 perustettu suomalainen siivousalan yritys. Tarjoamme ammattimaisia siivouspalveluja yrityksille, taloyhti&ouml;ille ja kaupan alan toimijoille koko Suomessa.
+
+Palvelumme:
+&#10003; Myym&auml;l&auml;siivous
+&#10003; Toimistosiivous
+&#10003; Porrassiivous
+&#10003; Rakennussiivous
+&#10003; Kotisiivous
+&#10003; Erikoissiivous
+&#10003; Ikkunapesut
+&#10003; Kuntosali- ja ravintolasiivous
+
+Yli 15 vuoden kokemuksella ja 2 500+ tyytyv&auml;isell&auml; asiakkaalla olemme luotettava kumppanisi. Bisnode Platinum AAA -luokitus. ISO 9001 ja ISO 14001 -sertifioitu.
+
+&#128222; +358 40 7770086
+&#9993; info@nordicglobe.fi
+&#127760; nordicglobe.co</div>
+            </div>
+
+            <div class="step">
+                <h4><span class="step-num">4</span> Erikoisalat (Specialties)</h4>
+                <div class="copy-block" onclick="copyText(this)">Myym&auml;l&auml;siivous, Toimistosiivous, Porrassiivous, Rakennussiivous, Kotisiivous, Erikoissiivous, Ikkunapesut, Kuntosalisiivous, Ravintolasiivous, Yll&auml;pitosiivous, Loppusiivous, Peruspesut ja vahaukset</div>
+            </div>
+
+            <div class="step">
+                <h4><span class="step-num">5</span> Muut tiedot</h4>
+                <div class="info-card">
+                    <p><strong>Toimiala:</strong> Facilities Services</p>
+                    <p><strong>Yrityksen koko:</strong> 51&ndash;200 ty&ouml;ntekij&auml;&auml;</p>
+                    <p><strong>Tyyppi:</strong> Privately Held</p>
+                    <p><strong>Perustettu:</strong> 2009</p>
+                    <p><strong>Logo:</strong> logo.png (300&times;300 px)</p>
+                    <p><strong>Kansikuva:</strong> 1128&times;191 px</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== FACEBOOK ==================== -->
+        <div class="platform" id="facebook">
+            <div class="platform-header">
+                <div class="platform-icon facebook"><i class="fa-brands fa-facebook-f"></i></div>
+                <div>
+                    <h2>Facebook-sivu</h2>
+                    <span style="color:rgba(255,255,255,0.5);font-size:0.88rem;">facebook.com/nordicglobe</span>
+                </div>
+            </div>
+
+            <div class="step">
+                <h4><span class="step-num">1</span> Sivun nimi</h4>
+                <div class="copy-block" onclick="copyText(this)">Nordic Globe Oy</div>
+            </div>
+
+            <div class="step">
+                <h4><span class="step-num">2</span> Kategoria</h4>
+                <div class="copy-block" onclick="copyText(this)">Siivouspalvelu (Cleaning Service)</div>
+                <p style="margin-top:8px;"><span class="label">Lis&auml;kategoriat</span></p>
+                <ul>
+                    <li>Commercial &amp; Industrial</li>
+                    <li>Professional Service</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h4><span class="step-num">3</span> Tietoja (About &mdash; max 255 merkki&auml;)</h4>
+                <div class="copy-block" onclick="copyText(this)">Nordic Globe Oy &mdash; Ammattimainen siivouspalvelu yrityksille ja taloyhti&ouml;ille koko Suomessa. Myym&auml;l&auml;siivous, toimistosiivous, porrassiivous, rakennussiivous. Platinum AAA. Yli 2 500 tyytyv&auml;ist&auml; asiakasta.</div>
+            </div>
+
+            <div class="step">
+                <h4><span class="step-num">4</span> Lis&auml;tiedot (Additional Information)</h4>
+                <div class="copy-block" onclick="copyText(this)">Nordic Globe Oy on vuonna 2009 perustettu siivousalan ammattilainen. Tarjoamme kattavat siivouspalvelut: myym&auml;l&auml;siivous, toimistosiivous, porrassiivous, rakennussiivous, kotisiivous, kuntosalisiivous, ravintolasiivous, ikkunapesut ja erikoissiivous. Palvelemme Espoossa, Helsingiss&auml;, Vantaalla, Tampereella, Turussa, Oulussa ja muualla Suomessa. Bisnode Platinum AAA, ISO 9001 &amp; 14001. Pyyd&auml; ilmainen tarjous!</div>
+            </div>
+
+            <div class="step">
+                <h4><span class="step-num">5</span> Yhteystiedot &amp; aukioloajat</h4>
+                <div class="info-card">
+                    <p><strong>Puhelin:</strong> +358 40 7770086</p>
+                    <p><strong>S&auml;hk&ouml;posti:</strong> info@nordicglobe.fi</p>
+                    <p><strong>Verkkosivu:</strong> https://nordicglobe.co</p>
+                    <p><strong>Osoite:</strong> Peuraniitty 5 a 41, 02750 Espoo</p>
+                    <p><strong>Aukioloajat:</strong> Ma&ndash;Pe 07:00&ndash;18:00</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <h4><span class="step-num">6</span> Toimintakehotuspainike (CTA)</h4>
+                <div class="info-card">
+                    <p><strong>Painike:</strong> Ota yhteytt&auml;</p>
+                    <p><strong>Linkki:</strong> https://nordicglobe.co/ota-yhteytta</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== INSTAGRAM ==================== -->
+        <div class="platform" id="instagram">
+            <div class="platform-header">
+                <div class="platform-icon instagram"><i class="fa-brands fa-instagram"></i></div>
+                <div>
+                    <h2>Instagram-profiili</h2>
+                    <span style="color:rgba(255,255,255,0.5);font-size:0.88rem;">@nordic_globe_oy</span>
+                </div>
+            </div>
+
+            <div class="step">
+                <h4><span class="step-num">1</span> K&auml;ytt&auml;j&auml;nimi</h4>
+                <div class="copy-block" onclick="copyText(this)">nordic_globe_oy</div>
+            </div>
+
+            <div class="step">
+                <h4><span class="step-num">2</span> Nimi</h4>
+                <div class="copy-block" onclick="copyText(this)">Nordic Globe Oy | Siivouspalvelu</div>
+            </div>
+
+            <div class="step">
+                <h4><span class="step-num">3</span> Bio (150 merkki&auml;)</h4>
+                <div class="copy-block" onclick="copyText(this)">&#127467;&#127470; Ammattimainen siivouspalvelu koko Suomessa
+&#10003; Myym&auml;l&auml;- &amp; toimistosiivous
+&#127942; Platinum AAA | 2 500+ asiakasta
+&#128222; 040 7770086
+&#128073; Pyyd&auml; tarjous!</div>
+            </div>
+
+            <div class="step">
+                <h4><span class="step-num">4</span> Linkki</h4>
+                <div class="copy-block" onclick="copyText(this)">https://nordicglobe.co</div>
+            </div>
+
+            <div class="step">
+                <h4><span class="step-num">5</span> Kategoria</h4>
+                <div class="copy-block" onclick="copyText(this)">Cleaning Service</div>
+            </div>
+
+            <div class="step">
+                <h4><span class="step-num">6</span> Toimintapainike</h4>
+                <div class="info-card">
+                    <p><strong>Painike:</strong> S&auml;hk&ouml;posti</p>
+                    <p><strong>S&auml;hk&ouml;posti:</strong> info@nordicglobe.fi</p>
+                    <p><strong>Puhelin:</strong> +358 40 7770086</p>
+                    <p><strong>Osoite:</strong> Peuraniitty 5 a 41, 02750 Espoo</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== HAKEMISTOT ==================== -->
+        <div class="platform" id="hakemistot">
+            <div class="platform-header">
+                <div class="platform-icon directory"><i class="fa-solid fa-building"></i></div>
+                <div>
+                    <h2>Suomalaiset yrityshakemistot</h2>
+                    <span style="color:rgba(255,255,255,0.5);font-size:0.88rem;">10 hakemistoa &mdash; rekister&ouml;idy kaikkiin</span>
+                </div>
+            </div>
+
+            <p style="margin-bottom:20px;color:rgba(255,255,255,0.6);">Rekister&ouml;idy jokaiseen alla olevaan hakemistoon. K&auml;yt&auml; samoja yhteystietoja ja yrityksen kuvausta (copy-paste alla). T&auml;m&auml; vahvistaa NAP-yhdenmukaisuutta (Name, Address, Phone) ja parantaa paikallista n&auml;kyvyytt&auml; Googlessa.</p>
+
+            <div class="step">
+                <h4>Yhteinen yritystietokortti &mdash; kopioi kaikkiin hakemistoihin</h4>
+                <div class="copy-block" onclick="copyText(this)">Yrityksen nimi: Nordic Globe Oy
+Y-tunnus: 2654015-7
+Osoite: Peuraniitty 5 a 41, 02750 Espoo
+Puhelin: +358 40 7770086
+S&auml;hk&ouml;posti: info@nordicglobe.fi
+Verkkosivu: https://nordicglobe.co
+Toimiala: Siivouspalvelut
+Kuvaus: Nordic Globe Oy &mdash; Ammattimainen siivouspalvelu yrityksille ja taloyhti&ouml;ille koko Suomessa. Myym&auml;l&auml;siivous, toimistosiivous, porrassiivous, rakennussiivous, kotisiivous, erikoissiivous. Platinum AAA. Yli 2 500 tyytyv&auml;ist&auml; asiakasta. Perustettu 2009.</div>
+            </div>
+
+            <table class="dir-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Hakemisto</th>
+                        <th>Osoite</th>
+                        <th>Tyyppi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><strong>Yritystele</strong></td>
+                        <td><a href="https://www.yritystele.fi" target="_blank" rel="noopener">yritystele.fi</a></td>
+                        <td>Ilmainen</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><strong>Fonecta (Finder)</strong></td>
+                        <td><a href="https://www.fonecta.fi" target="_blank" rel="noopener">fonecta.fi</a></td>
+                        <td>Ilmainen peruslistaus</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><strong>Finder.fi</strong></td>
+                        <td><a href="https://www.finder.fi" target="_blank" rel="noopener">finder.fi</a></td>
+                        <td>Ilmainen</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><strong>Suomen Asiakastieto</strong></td>
+                        <td><a href="https://www.asiakastieto.fi" target="_blank" rel="noopener">asiakastieto.fi</a></td>
+                        <td>Ilmainen perustieto</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><strong>Kauppalehti yrityshaku</strong></td>
+                        <td><a href="https://www.kauppalehti.fi/yritykset" target="_blank" rel="noopener">kauppalehti.fi/yritykset</a></td>
+                        <td>Ilmainen</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><strong>Yelp Suomi</strong></td>
+                        <td><a href="https://www.yelp.fi" target="_blank" rel="noopener">yelp.fi</a></td>
+                        <td>Ilmainen</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td><strong>Cylex Suomi</strong></td>
+                        <td><a href="https://www.cylex.fi" target="_blank" rel="noopener">cylex.fi</a></td>
+                        <td>Ilmainen</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td><strong>Hotfrog Suomi</strong></td>
+                        <td><a href="https://www.hotfrog.fi" target="_blank" rel="noopener">hotfrog.fi</a></td>
+                        <td>Ilmainen</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td><strong>Kompassi.fi</strong></td>
+                        <td><a href="https://fi.kompass.com" target="_blank" rel="noopener">fi.kompass.com</a></td>
+                        <td>Ilmainen peruslistaus</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td><strong>Europages</strong></td>
+                        <td><a href="https://www.europages.fi" target="_blank" rel="noopener">europages.fi</a></td>
+                        <td>Ilmainen</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="step" style="margin-top:24px;">
+                <h4><i class="fa-solid fa-lightbulb" style="color:var(--green);margin-right:8px;"></i> Vinkki</h4>
+                <p>K&auml;yt&auml; <strong>t&auml;sm&auml;lleen</strong> samaa yrityksen nime&auml;, osoitetta ja puhelinnumeroa jokaisessa hakemistossa. NAP-yhdenmukaisuus (Name, Address, Phone) on yksi t&auml;rkeimmist&auml; paikallisen SEO:n signaaleista.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Nordic Globe Oy &bull; T&auml;m&auml; opas on tarkoitettu sis&auml;iseen k&auml;ytt&ouml;&ouml;n</p>
+        </div>
+    </footer>
+
+    <script>
+    function copyText(el) {
+        var text = el.innerText || el.textContent;
+        // Remove the "KOPIOI" label text from the end
+        text = text.replace(/KOPIOI$/, '').replace(/KOPIOITU \u2713$/, '').trim();
+        navigator.clipboard.writeText(text).then(function() {
+            el.classList.add('copied');
+            setTimeout(function() { el.classList.remove('copied'); }, 2000);
+        });
+    }
+    </script>
+
+</body>
+</html>

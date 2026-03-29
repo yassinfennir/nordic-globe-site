@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d2b4a"/>
+      <stop offset="100%" style="stop-color:#1a3a6b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Subtle grid pattern -->
+  <line x1="0" y1="0" x2="1200" y2="630" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  <line x1="1200" y1="0" x2="0" y2="630" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  <rect x="60" y="60" width="1080" height="510" rx="20" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <!-- Checkmark icon -->
+  <circle cx="600" cy="200" r="50" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="3"/>
+  <polyline points="575,200 595,220 630,180" fill="none" stroke="#14F195" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Main text -->
+  <text x="600" y="320" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Myym&#228;l&#228;siivous</text>
+  <!-- Subtitle -->
+  <text x="600" y="375" font-family="Arial, Helvetica, sans-serif" font-size="30" fill="rgba(255,255,255,0.75)" text-anchor="middle">Nordic Globe &#8211; Ammattisiivous Suomessa</text>
+  <!-- Divider -->
+  <rect x="520" y="410" width="160" height="3" rx="2" fill="#14F195" opacity="0.6"/>
+  <!-- URL -->
+  <text x="600" y="560" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="rgba(255,255,255,0.4)" text-anchor="middle">nordicglobe.co</text>
+</svg>

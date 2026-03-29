@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nordic Globe Oy — Digital Solutions Package | Proposal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0a1628;
+  --navy-light:#0f1f3a;
+  --navy-mid:#14294d;
+  --blue:#1877F2;
+  --blue-light:#4a9af5;
+  --blue-glow:rgba(24,119,242,.15);
+  --white:#ffffff;
+  --gray-100:#f0f2f5;
+  --gray-200:#d0d5dd;
+  --gray-300:#98a2b3;
+  --gray-400:#667085;
+  --gold:#c9a84c;
+  --green:#12b76a;
+  --green-bg:rgba(18,183,106,.1);
+}
+html{font-size:16px;scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  background:var(--navy);
+  color:var(--white);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+h1,h2,h3,h4,h5{font-family:'Space Grotesk','Inter',sans-serif;font-weight:700;line-height:1.2}
+
+/* ─── Print ─── */
+@media print{
+  body{background:#fff;color:#111}
+  .page{break-after:page;box-shadow:none;border:none;padding:60px 50px}
+  .no-print{display:none!important}
+  .page::before{display:none}
+  table th{background:var(--navy)!important;color:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .pricing-card{border:1px solid #ccc}
+  .pricing-card.featured{border:2px solid var(--blue)}
+  .roi-bar-fill{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .step-number{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+/* ─── Layout ─── */
+.page{
+  max-width:900px;
+  margin:0 auto 40px;
+  padding:80px 70px;
+  position:relative;
+  background:var(--navy);
+  border:1px solid rgba(255,255,255,.06);
+  box-shadow:0 25px 80px rgba(0,0,0,.4);
+}
+.page::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:4px;
+  background:linear-gradient(90deg,var(--blue),var(--blue-light),var(--blue));
+}
+
+/* ─── Print Button ─── */
+.print-bar{
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:1000;
+  background:rgba(10,22,40,.92);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  padding:14px 30px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.print-bar-left{display:flex;align-items:center;gap:12px}
+.print-bar-left span{font-size:.8rem;color:var(--gray-300);letter-spacing:.05em;text-transform:uppercase;font-weight:600}
+.print-bar-status{font-size:.75rem;color:var(--gray-400)}
+.btn-print{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--blue);color:#fff;
+  border:none;padding:10px 28px;
+  border-radius:6px;font-size:.85rem;font-weight:600;
+  cursor:pointer;transition:all .2s;
+  font-family:'Inter',sans-serif;
+  letter-spacing:.02em;
+}
+.btn-print:hover{background:#1565d8;transform:translateY(-1px);box-shadow:0 4px 20px rgba(24,119,242,.35)}
+.btn-print svg{width:16px;height:16px}
+
+body{padding-top:62px}
+
+/* ─── Cover ─── */
+.cover{
+  min-height:calc(100vh - 102px);
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  text-align:center;
+  background:radial-gradient(ellipse at 50% 30%,var(--navy-mid) 0%,var(--navy) 70%);
+}
+.cover-confidential{
+  font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gray-400);margin-bottom:60px;
+  border:1px solid rgba(255,255,255,.1);padding:6px 20px;border-radius:100px;
+}
+.cover-logo-area{margin-bottom:48px}
+.cover-logo-area .diamond{
+  width:56px;height:56px;
+  border:2px solid var(--blue);
+  transform:rotate(45deg);
+  margin:0 auto 20px;
+  display:flex;align-items:center;justify-content:center;
+}
+.cover-logo-area .diamond-inner{
+  width:20px;height:20px;background:var(--blue);border-radius:2px;
+}
+.cover h1{
+  font-size:2.6rem;
+  letter-spacing:-.02em;
+  margin-bottom:8px;
+  background:linear-gradient(135deg,#fff 60%,var(--blue-light));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.cover .cover-sub{
+  font-size:1.3rem;
+  color:var(--blue-light);
+  font-weight:300;
+  margin-bottom:48px;
+  font-family:'Space Grotesk',sans-serif;
+}
+.cover-meta{
+  display:flex;gap:40px;
+  font-size:.82rem;color:var(--gray-300);
+}
+.cover-meta div{text-align:left}
+.cover-meta .label{
+  font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--gray-400);margin-bottom:4px;font-weight:600;
+}
+.cover-meta .value{color:var(--white);font-weight:500}
+.cover-meta a{color:var(--blue-light);text-decoration:none}
+.cover-meta a:hover{text-decoration:underline}
+.cover-divider{
+  width:60px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--blue),transparent);
+  margin:50px auto 20px;
+}
+.cover-footer{font-size:.7rem;color:var(--gray-400);letter-spacing:.08em}
+
+/* ─── Section Headers ─── */
+.section-header{margin-bottom:48px}
+.section-number{
+  font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--blue);font-weight:600;margin-bottom:8px;
+}
+.section-header h2{font-size:2rem;letter-spacing:-.015em;margin-bottom:6px}
+.section-header .section-sub{
+  font-size:1rem;color:var(--gray-300);font-weight:300;
+}
+
+/* ─── Table ─── */
+.deliverables-table{width:100%;border-collapse:collapse;margin-top:8px;font-size:.88rem}
+.deliverables-table th{
+  background:var(--navy-mid);
+  padding:14px 18px;
+  text-align:left;font-weight:600;
+  font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--gray-200);
+  border-bottom:2px solid var(--blue);
+}
+.deliverables-table th:last-child{text-align:right}
+.deliverables-table td{
+  padding:13px 18px;
+  border-bottom:1px solid rgba(255,255,255,.05);
+  color:var(--gray-100);
+}
+.deliverables-table td:last-child{
+  text-align:right;font-weight:600;
+  font-variant-numeric:tabular-nums;
+  color:var(--white);
+}
+.deliverables-table tbody tr:hover{background:rgba(24,119,242,.04)}
+.deliverables-table .row-category td{
+  padding-top:22px;font-size:.68rem;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--blue);font-weight:700;
+  border-bottom:none;
+}
+.deliverables-table tfoot td{
+  padding:18px;font-size:1rem;font-weight:700;
+  border-top:2px solid var(--blue);
+  color:var(--white);
+}
+.deliverables-table tfoot td:last-child{
+  font-size:1.15rem;
+  color:var(--blue-light);
+}
+
+/* ─── Pricing ─── */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+.pricing-card{
+  background:var(--navy-light);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:12px;
+  padding:36px 28px;
+  position:relative;
+  transition:transform .2s;
+}
+.pricing-card:hover{transform:translateY(-3px)}
+.pricing-card.featured{
+  border-color:var(--blue);
+  box-shadow:0 0 40px rgba(24,119,242,.12);
+}
+.pricing-card.featured::before{
+  content:'Suosittelemme / Recommended';
+  position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+  background:var(--blue);color:#fff;
+  font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  padding:4px 16px;border-radius:100px;white-space:nowrap;
+}
+.pricing-label{
+  font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--gray-400);font-weight:600;margin-bottom:6px;
+}
+.pricing-title{font-size:1.1rem;margin-bottom:16px;font-family:'Space Grotesk',sans-serif}
+.pricing-amount{
+  font-size:2rem;font-weight:700;margin-bottom:4px;
+  font-family:'Space Grotesk',sans-serif;
+}
+.pricing-amount small{font-size:.85rem;font-weight:400;color:var(--gray-300)}
+.pricing-note{font-size:.78rem;color:var(--gray-300);margin-bottom:20px}
+.pricing-savings{
+  display:inline-block;
+  background:var(--green-bg);
+  color:var(--green);
+  font-size:.72rem;font-weight:700;
+  padding:3px 12px;border-radius:100px;
+  margin-bottom:20px;
+}
+.pricing-features{list-style:none;font-size:.82rem;color:var(--gray-200)}
+.pricing-features li{
+  padding:7px 0;
+  border-bottom:1px solid rgba(255,255,255,.04);
+  display:flex;align-items:flex-start;gap:8px;
+}
+.pricing-features li::before{
+  content:'';display:inline-block;flex-shrink:0;
+  width:16px;height:16px;margin-top:2px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%2312b76a'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+
+/* ─── ROI ─── */
+.roi-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:36px 0}
+.roi-card{
+  background:var(--navy-light);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:10px;padding:28px;
+}
+.roi-card .roi-label{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gray-400);font-weight:600;margin-bottom:8px}
+.roi-card .roi-value{font-size:1.8rem;font-weight:700;font-family:'Space Grotesk',sans-serif}
+.roi-card .roi-detail{font-size:.82rem;color:var(--gray-300);margin-top:4px}
+.roi-chart{margin:40px 0}
+.roi-chart-title{font-size:.82rem;color:var(--gray-300);margin-bottom:16px;font-weight:500}
+.roi-bar{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.roi-bar-label{width:90px;font-size:.78rem;color:var(--gray-300);text-align:right;flex-shrink:0}
+.roi-bar-track{flex:1;height:32px;background:var(--navy-light);border-radius:6px;overflow:hidden;position:relative}
+.roi-bar-fill{
+  height:100%;border-radius:6px;
+  display:flex;align-items:center;justify-content:flex-end;padding-right:12px;
+  font-size:.75rem;font-weight:700;color:#fff;
+  transition:width .6s ease;
+}
+.roi-bar-fill.current{background:var(--gray-400);width:20%}
+.roi-bar-fill.month3{background:linear-gradient(90deg,var(--blue),var(--blue-light));width:38%}
+.roi-bar-fill.month6{background:linear-gradient(90deg,var(--blue),var(--blue-light));width:55%}
+.roi-bar-fill.month12{background:linear-gradient(90deg,var(--blue),#34d399);width:82%}
+.roi-projection-note{
+  margin-top:28px;padding:20px 24px;
+  background:var(--blue-glow);border-left:3px solid var(--blue);
+  border-radius:0 8px 8px 0;font-size:.85rem;color:var(--gray-200);line-height:1.7;
+}
+.roi-projection-note strong{color:var(--white)}
+
+/* ─── Steps ─── */
+.steps-list{counter-reset:step;margin-top:32px}
+.step-item{
+  display:flex;gap:20px;
+  padding:22px 0;
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+.step-number{
+  flex-shrink:0;width:42px;height:42px;
+  background:var(--navy-mid);border:1px solid var(--blue);
+  border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:700;font-size:1rem;color:var(--blue-light);
+}
+.step-content h4{font-size:.95rem;margin-bottom:3px;font-family:'Space Grotesk',sans-serif}
+.step-content p{font-size:.82rem;color:var(--gray-300)}
+.step-timeline{
+  display:inline-block;
+  font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--blue);
+  background:var(--blue-glow);
+  padding:2px 10px;border-radius:100px;
+  margin-top:6px;
+}
+
+/* ─── Payment ─── */
+.payment-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:32px}
+.payment-card{
+  background:var(--navy-light);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:10px;padding:24px;
+  display:flex;align-items:flex-start;gap:16px;
+}
+.payment-icon{
+  flex-shrink:0;width:40px;height:40px;
+  background:var(--navy-mid);border:1px solid rgba(255,255,255,.08);
+  border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+}
+.payment-icon svg{width:20px;height:20px;color:var(--blue-light)}
+.payment-card h4{font-size:.9rem;margin-bottom:4px;font-family:'Space Grotesk',sans-serif}
+.payment-card p{font-size:.8rem;color:var(--gray-300)}
+.payment-card a{color:var(--blue-light);text-decoration:none}
+.payment-card a:hover{text-decoration:underline}
+
+/* ─── Footer ─── */
+.doc-footer{
+  text-align:center;
+  padding:48px 0 80px;
+  font-size:.78rem;color:var(--gray-400);
+}
+.doc-footer a{color:var(--blue-light);text-decoration:none}
+.doc-footer .footer-line{
+  width:60px;height:1px;margin:0 auto 20px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);
+}
+</style>
+</head>
+<body>
+
+<!-- ━━━ Print Bar ━━━ -->
+<div class="print-bar no-print">
+  <div class="print-bar-left">
+    <span>Nordic Globe Oy &mdash; Proposal</span>
+    <span class="print-bar-status">Confidential &middot; 29.3.2026</span>
+  </div>
+  <button class="btn-print" onclick="window.print()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+    Tulosta / Print PDF
+  </button>
+</div>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     PAGE 1 — COVER
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<div class="page cover">
+  <div class="cover-confidential">Luottamuksellinen / Confidential</div>
+  <div class="cover-logo-area">
+    <div class="diamond"><div class="diamond-inner"></div></div>
+  </div>
+  <h1>Nordic Globe Oy</h1>
+  <div class="cover-sub">Digital Solutions Package</div>
+  <p style="font-size:1.05rem;color:var(--gray-200);font-weight:300;margin-bottom:56px;">
+    Digitaalisten palvelujen kokonaisratkaisu
+  </p>
+  <div class="cover-meta">
+    <div>
+      <div class="label">Valmistelija / Prepared by</div>
+      <div class="value">Yassin El Fennir</div>
+    </div>
+    <div>
+      <div class="label">Yritys / Company</div>
+      <div class="value"><a href="https://elfennir.com" target="_blank">elfennir.com</a></div>
+    </div>
+    <div>
+      <div class="label">Pvm / Date</div>
+      <div class="value">29.3.2026</div>
+    </div>
+    <div>
+      <div class="label">Versio / Version</div>
+      <div class="value">1.0</div>
+    </div>
+  </div>
+  <div class="cover-divider"></div>
+  <div class="cover-footer">This document is intended solely for the named recipient.</div>
+</div>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     PAGE 2 — WHAT WAS DELIVERED
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">01 &mdash; Toimitetut palvelut</div>
+    <h2>What Was Delivered</h2>
+    <div class="section-sub">Mitä toimitettiin &mdash; Kattava digitaalinen kokonaisratkaisu</div>
+  </div>
+
+  <table class="deliverables-table">
+    <thead>
+      <tr>
+        <th>Toimitettava / Deliverable</th>
+        <th>Markkina-arvo / Market Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="row-category"><td colspan="2">Verkkosivusto / Website</td></tr>
+      <tr><td>Professional website (32+ pages)</td><td>&euro;3,500</td></tr>
+      <tr><td>18 city-specific SEO pages (FI + EN)</td><td>&euro;2,700</td></tr>
+      <tr><td>8 SEO blog articles</td><td>&euro;1,600</td></tr>
+
+      <tr class="row-category"><td colspan="2">Tekninen optimointi / Technical</td></tr>
+      <tr><td>Schema.org structured data (13 types)</td><td>&euro;800</td></tr>
+      <tr><td>Enterprise security headers (13 headers)</td><td>&euro;500</td></tr>
+      <tr><td>PWA with offline support</td><td>&euro;400</td></tr>
+
+      <tr class="row-category"><td colspan="2">Vaatimustenmukaisuus / Compliance</td></tr>
+      <tr><td>GDPR compliance (cookie consent + privacy policy)</td><td>&euro;600</td></tr>
+      <tr><td>WCAG 2.1 AA accessibility</td><td>&euro;400</td></tr>
+
+      <tr class="row-category"><td colspan="2">Automaatio &amp; Ty&ouml;kalut / Automation &amp; Tools</td></tr>
+      <tr><td>9 n8n automation workflows</td><td>&euro;4,500</td></tr>
+      <tr><td>Admin dashboard system</td><td>&euro;1,500</td></tr>
+      <tr><td>Review management system</td><td>&euro;800</td></tr>
+      <tr><td>Invoice generator</td><td>&euro;600</td></tr>
+      <tr><td>Time tracking system</td><td>&euro;800</td></tr>
+
+      <tr class="row-category"><td colspan="2">Konsultointi / Consulting</td></tr>
+      <tr><td>Technical audit report</td><td>&euro;500</td></tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>Kokonaismarkkina-arvo / Total Market Value</td>
+        <td>&euro;19,200</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     PAGE 3 — YOUR INVESTMENT
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">02 &mdash; Investointi</div>
+    <h2>Your Investment</h2>
+    <div class="section-sub">Teid&auml;n investointi &mdash; Valitse sopivin vaihtoehto</div>
+  </div>
+
+  <div class="pricing-grid">
+    <!-- Option A -->
+    <div class="pricing-card">
+      <div class="pricing-label">Vaihtoehto A</div>
+      <div class="pricing-title">One-Time Payment<br><span style="font-size:.82rem;color:var(--gray-300);font-weight:400">Kertamaksu</span></div>
+      <div class="pricing-amount">&euro;2,990</div>
+      <div class="pricing-savings">Save 84% vs market value</div>
+      <ul class="pricing-features">
+        <li>Everything delivered as listed</li>
+        <li>Full source code ownership</li>
+        <li>3 months of support included</li>
+        <li>Documentation &amp; training</li>
+      </ul>
+    </div>
+
+    <!-- Option B -->
+    <div class="pricing-card featured">
+      <div class="pricing-label">Vaihtoehto B</div>
+      <div class="pricing-title">Monthly Partnership<br><span style="font-size:.82rem;color:var(--gray-300);font-weight:400">Kuukausikumppanuus</span></div>
+      <div class="pricing-amount">&euro;490<small>/kk</small></div>
+      <div class="pricing-note">&euro;0 setup fee &middot; 12-month agreement<br>Total: &euro;5,880/year</div>
+      <ul class="pricing-features">
+        <li>Hosting &amp; infrastructure</li>
+        <li>Monthly updates &amp; maintenance</li>
+        <li>New content monthly</li>
+        <li>SEO optimization</li>
+        <li>Automation maintenance</li>
+        <li>Priority email support</li>
+      </ul>
+    </div>
+
+    <!-- Option C -->
+    <div class="pricing-card">
+      <div class="pricing-label">Vaihtoehto C</div>
+      <div class="pricing-title">Full Service Retainer<br><span style="font-size:.82rem;color:var(--gray-300);font-weight:400">T&auml;ysi palvelusopimus</span></div>
+      <div class="pricing-amount">&euro;790<small>/kk</small></div>
+      <div class="pricing-note">Everything in Option B, plus:</div>
+      <ul class="pricing-features">
+        <li>Weekly blog posts</li>
+        <li>Social media management</li>
+        <li>New feature development</li>
+        <li>Priority 24/7 support</li>
+        <li>Quarterly strategy review</li>
+        <li>Dedicated account manager</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     PAGE 4 — ROI PROJECTION
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">03 &mdash; Tuottolaskelma</div>
+    <h2>ROI Projection</h2>
+    <div class="section-sub">Tuottolaskelma &mdash; Odotettu sijoitetun p&auml;&auml;oman tuotto</div>
+  </div>
+
+  <div class="roi-grid">
+    <div class="roi-card">
+      <div class="roi-label">Organic Lead Increase</div>
+      <div class="roi-value" style="color:var(--green)">+30&ndash;50%</div>
+      <div class="roi-detail">Estimated improvement within 6 months of launch</div>
+    </div>
+    <div class="roi-card">
+      <div class="roi-label">Expected ROI</div>
+      <div class="roi-value" style="color:var(--blue-light)">3&ndash;5x</div>
+      <div class="roi-detail">Return on investment within the first 6 months</div>
+    </div>
+    <div class="roi-card">
+      <div class="roi-label">SEO Pages Coverage</div>
+      <div class="roi-value">18 cities</div>
+      <div class="roi-detail">Bilingual local pages capturing search demand</div>
+    </div>
+    <div class="roi-card">
+      <div class="roi-label">Automation Hours Saved</div>
+      <div class="roi-value">20+ h/mo</div>
+      <div class="roi-detail">Admin, invoicing, review collection, reporting</div>
+    </div>
+  </div>
+
+  <!-- Growth Chart -->
+  <div class="roi-chart">
+    <div class="roi-chart-title">Projected Organic Lead Growth &mdash; Orgaanisten liidien kasvuennuste</div>
+    <div class="roi-bar">
+      <div class="roi-bar-label">Nykytilanne<br><span style="font-size:.7rem;color:var(--gray-400)">Current</span></div>
+      <div class="roi-bar-track"><div class="roi-bar-fill current">Baseline</div></div>
+    </div>
+    <div class="roi-bar">
+      <div class="roi-bar-label">3 kk<br><span style="font-size:.7rem;color:var(--gray-400)">3 months</span></div>
+      <div class="roi-bar-track"><div class="roi-bar-fill month3">+30%</div></div>
+    </div>
+    <div class="roi-bar">
+      <div class="roi-bar-label">6 kk<br><span style="font-size:.7rem;color:var(--gray-400)">6 months</span></div>
+      <div class="roi-bar-track"><div class="roi-bar-fill month6">+50%</div></div>
+    </div>
+    <div class="roi-bar">
+      <div class="roi-bar-label">12 kk<br><span style="font-size:.7rem;color:var(--gray-400)">12 months</span></div>
+      <div class="roi-bar-track"><div class="roi-bar-fill month12">+120%</div></div>
+    </div>
+  </div>
+
+  <div class="roi-projection-note">
+    <strong>Conservative estimate:</strong> With 18 city-specific SEO pages ranking in Google,
+    Schema.org structured data increasing click-through rates, and automated review collection
+    building social proof &mdash; a <strong>30&ndash;50% increase in organic leads within 6 months</strong>
+    is a realistic target based on industry benchmarks for local service businesses in Finland.
+  </div>
+</div>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     PAGE 5 — NEXT STEPS
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">04 &mdash; Seuraavat vaiheet</div>
+    <h2>Next Steps</h2>
+    <div class="section-sub">Seuraavat vaiheet &mdash; Toteutussuunnitelma</div>
+  </div>
+
+  <div class="steps-list">
+    <div class="step-item">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <h4>Deploy website to production</h4>
+        <p>Julkaistaan verkkosivusto tuotantopalvelimelle &mdash; domain, SSL, CDN configuration.</p>
+        <span class="step-timeline">T&auml;n&auml;&auml;n / Today</span>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <h4>Set up Google Business Profile</h4>
+        <p>Optimoidaan Google Yritysprofiili n&auml;kyvyyden ja paikallisten hakutulosten parantamiseksi.</p>
+        <span class="step-timeline">Viikko 1 / Week 1</span>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <h4>Connect Google Analytics 4</h4>
+        <p>Asennetaan analytiikka kaikkien vierailijoiden, konversioiden ja k&auml;ytt&auml;ytymisen seurantaan.</p>
+        <span class="step-timeline">Viikko 1 / Week 1</span>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-number">4</div>
+      <div class="step-content">
+        <h4>Begin review collection campaign</h4>
+        <p>Automatisoidaan arvostelupyynt&ouml;jen l&auml;hett&auml;minen asiakkaille n8n-ty&ouml;nkulkujen avulla.</p>
+        <span class="step-timeline">Viikko 2 / Week 2</span>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-number">5</div>
+      <div class="step-content">
+        <h4>Start weekly blog publishing schedule</h4>
+        <p>S&auml;&auml;nn&ouml;llinen blogisis&auml;ll&ouml;n tuotanto SEO-n&auml;kyvyyden jatkuvaksi kasvattamiseksi.</p>
+        <span class="step-timeline">Viikko 2+ / Week 2+</span>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-number">6</div>
+      <div class="step-content">
+        <h4>Monitor Core Web Vitals monthly</h4>
+        <p>Kuukausittainen suorituskyvyn seuranta ja optimointi hakukonesijoitusten yll&auml;pit&auml;miseksi.</p>
+        <span class="step-timeline">Jatkuva / Ongoing</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     PAGE 6 — PAYMENT METHODS
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">05 &mdash; Maksutavat</div>
+    <h2>Payment Methods</h2>
+    <div class="section-sub">Maksutavat &mdash; Joustavat maksuvaihtoehdot</div>
+  </div>
+
+  <div class="payment-grid">
+    <div class="payment-card">
+      <div class="payment-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+      </div>
+      <div>
+        <h4>Bank Transfer</h4>
+        <p>Tilisiirto<br>Nordic Globe &rarr; El Fennir<br>Invoice with bank details provided</p>
+      </div>
+    </div>
+    <div class="payment-card">
+      <div class="payment-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8l-8 8M8 8l8 8"/></svg>
+      </div>
+      <div>
+        <h4>Revolut</h4>
+        <p>Nopea maksu / Instant payment<br><a href="https://revolut.me/yelfennir" target="_blank">revolut.me/yelfennir</a></p>
+      </div>
+    </div>
+    <div class="payment-card">
+      <div class="payment-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      </div>
+      <div>
+        <h4>Invoice</h4>
+        <p>Lasku<br>PDF-lasku saatavilla pyynnöst&auml;<br>14 or 30 day payment terms</p>
+      </div>
+    </div>
+    <div class="payment-card">
+      <div class="payment-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+      </div>
+      <div>
+        <h4>Stripe</h4>
+        <p>Korttimaksu / Card payment<br><a href="https://elfennir.com/pay/" target="_blank">elfennir.com/pay/</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:56px;text-align:center;padding:40px;background:var(--navy-light);border-radius:12px;border:1px solid rgba(255,255,255,.06)">
+    <p style="font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gray-400);margin-bottom:12px;font-weight:600">Valmis aloittamaan?</p>
+    <p style="font-size:1.4rem;font-weight:700;font-family:'Space Grotesk',sans-serif;margin-bottom:6px">Ready to get started?</p>
+    <p style="font-size:.9rem;color:var(--gray-300);margin-bottom:4px">Yassin El Fennir</p>
+    <p style="font-size:.88rem"><a href="https://elfennir.com" target="_blank" style="color:var(--blue-light);text-decoration:none">elfennir.com</a></p>
+  </div>
+</div>
+
+<!-- ━━━ Footer ━━━ -->
+<div class="doc-footer no-print">
+  <div class="footer-line"></div>
+  <p>&copy; 2026 Yassin El Fennir &middot; <a href="https://elfennir.com">elfennir.com</a></p>
+  <p style="margin-top:6px">This proposal is valid for 30 days from the date of issue.</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tietosuojaseloste | Nordic Globe Oy</title>
+    <meta name="description" content="Nordic Globe Oy:n tietosuojaseloste. Lue miten k&auml;sittelemme henkil&ouml;tietojasi EU:n yleisen tietosuoja-asetuksen (GDPR) mukaisesti.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://nordicglobe.co/tietosuoja">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="logo-icon.png">
+    <meta property="og:title" content="Tietosuojaseloste | Nordic Globe Oy">
+    <meta property="og:description" content="Nordic Globe Oy:n tietosuojaseloste ja ev&auml;stek&auml;yt&auml;nt&ouml;.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nordicglobe.co/tietosuoja">
+    <meta property="og:locale" content="fi_FI">
+    <meta name="theme-color" content="#0a1628">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1877F2;
+            --primary-dark: #1260cc;
+            --green: #3b9bf5;
+            --green-light: #d6e8fa;
+            --dark: #0a1628;
+            --dark-blue: #0f2744;
+            --gray-100: #EAF4FF;
+            --gray-200: #d6e8fa;
+            --gray-300: #c5cdd8;
+            --gray-600: #5a6a7e;
+            --gray-800: #2c3e50;
+            --white: #ffffff;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+            --shadow-md: 0 8px 30px rgba(0,0,0,0.08);
+            --shadow-lg: 0 20px 60px rgba(0,0,0,0.12);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--white);
+            color: var(--gray-800);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { text-decoration: none; color: var(--primary); transition: color 0.3s ease; }
+        a:hover { color: var(--primary-dark); }
+
+        /* Nav bar */
+        .nav-simple {
+            background: var(--dark);
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .nav-simple .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-simple img { height: 38px; }
+        .nav-simple a.back-link {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.3s ease;
+        }
+        .nav-simple a.back-link:hover { color: var(--green); }
+
+        /* Hero */
+        .privacy-hero {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-blue) 100%);
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+        .privacy-hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+        .privacy-hero p {
+            color: rgba(255,255,255,0.6);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Content */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .privacy-content {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 60px 24px 80px;
+        }
+        .privacy-content h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-top: 48px;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--gray-100);
+        }
+        .privacy-content h2:first-child { margin-top: 0; }
+        .privacy-content h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--gray-800);
+            margin-top: 28px;
+            margin-bottom: 10px;
+        }
+        .privacy-content p {
+            margin-bottom: 14px;
+            color: var(--gray-600);
+            font-size: 0.97rem;
+        }
+        .privacy-content ul {
+            margin: 10px 0 18px 24px;
+            color: var(--gray-600);
+            font-size: 0.97rem;
+        }
+        .privacy-content ul li { margin-bottom: 8px; }
+        .privacy-content strong { color: var(--gray-800); }
+        .info-card {
+            background: var(--gray-100);
+            border-radius: var(--radius-md);
+            padding: 24px 28px;
+            margin: 20px 0;
+        }
+        .info-card p { margin-bottom: 6px; }
+        .info-card p:last-child { margin-bottom: 0; }
+        .last-updated {
+            margin-top: 50px;
+            padding-top: 24px;
+            border-top: 1px solid var(--gray-200);
+            font-size: 0.88rem;
+            color: var(--gray-300);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+        .footer p { font-size: 0.84rem; color: rgba(255,255,255,0.4); }
+        .footer a { color: rgba(255,255,255,0.4); }
+        .footer a:hover { color: var(--green); }
+
+        @media (max-width: 768px) {
+            .privacy-hero { padding: 60px 0 40px; }
+            .privacy-hero h1 { font-size: 2rem; }
+            .privacy-content { padding: 40px 18px 60px; }
+            .privacy-content h2 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav-simple">
+        <div class="container">
+            <a href="/"><img src="logo-icon.png" alt="Nordic Globe Oy" loading="lazy"></a>
+            <a href="/" class="back-link"><i class="fa-solid fa-arrow-left"></i> Takaisin etusivulle</a>
+        </div>
+    </nav>
+
+    <section class="privacy-hero">
+        <div class="container">
+            <h1>Tietosuojaseloste</h1>
+            <p>EU:n yleisen tietosuoja-asetuksen (GDPR, 2016/679) mukainen tietosuojaseloste</p>
+        </div>
+    </section>
+
+    <main class="privacy-content">
+
+        <h2>1. Rekisterinpit&auml;j&auml;</h2>
+        <div class="info-card">
+            <p><strong>Nordic Globe Oy</strong></p>
+            <p>Y-tunnus: 2654015-7</p>
+            <p>Peuraniitty 5 a 41, 02750 Espoo</p>
+            <p>Puhelin: 040 7770086</p>
+            <p>S&auml;hk&ouml;posti: <a href="mailto:info@nordicglobe.co">info@nordicglobe.co</a></p>
+        </div>
+
+        <h2>2. Rekisterin nimi</h2>
+        <p>Asiakas- ja yhteystietorekisteri</p>
+
+        <h2>3. Henkil&ouml;tietojen k&auml;sittelyn tarkoitus ja oikeusperuste</h2>
+        <p>Henkil&ouml;tietoja k&auml;sitell&auml;&auml;n seuraaviin tarkoituksiin:</p>
+        <ul>
+            <li>Asiakassuhteiden hoitaminen ja yll&auml;pito</li>
+            <li>Tarjousten ja palvelutietojen l&auml;hett&auml;minen</li>
+            <li>Palvelujen tuottaminen ja toimittaminen</li>
+            <li>Laskutus ja maksujen seuranta</li>
+            <li>Asiakasviestint&auml; ja markkinointi (suostumuksella)</li>
+            <li>Lakis&auml;&auml;teisten velvoitteiden noudattaminen</li>
+        </ul>
+        <p>K&auml;sittelyn oikeusperusteena on sopimuksen t&auml;yt&auml;nt&ouml;&ouml;npano, oikeutettu etu (asiakassuhteen hoito), rekister&ouml;idyn antama suostumus (markkinointi) sek&auml; lakis&auml;&auml;teiset velvoitteet.</p>
+
+        <h2>4. Rekisterin tietosis&auml;lt&ouml;</h2>
+        <p>Rekisteri voi sis&auml;lt&auml;&auml; seuraavia tietoja:</p>
+        <ul>
+            <li>Nimi (etu- ja sukunimi)</li>
+            <li>S&auml;hk&ouml;postiosoite</li>
+            <li>Puhelinnumero</li>
+            <li>Osoite (postiosoite, kaupunki, postinumero)</li>
+            <li>Yrityksen nimi ja y-tunnus (yritysasiakkaat)</li>
+            <li>Palveluhistoria ja asiointitiedot</li>
+        </ul>
+
+        <h2>5. Tietojen s&auml;ilytysaika</h2>
+        <p>Henkil&ouml;tietoja s&auml;ilytet&auml;&auml;n asiakassuhteen keston ajan sek&auml; <strong>5 vuotta</strong> asiakassuhteen p&auml;&auml;ttymisen j&auml;lkeen kirjanpitolains&auml;&auml;d&auml;nn&ouml;n ja mahdollisten vaateiden vuoksi. T&auml;m&auml;n j&auml;lkeen tiedot poistetaan tai anonymisoidaan.</p>
+
+        <h2>6. S&auml;&auml;nn&ouml;nmukaiset tietol&auml;hteet</h2>
+        <p>Tiedot saadaan ensisijaisesti rekister&ouml;idylt&auml; itselt&auml;&auml;n yhteydenoton, tarjouspyynn&ouml;n tai sopimuksen teon yhteydess&auml;. Tietoja voidaan my&ouml;s ker&auml;t&auml; verkkosivuston lomakkeiden ja ev&auml;steiden kautta.</p>
+
+        <h2>7. Tietojen luovutus ja siirto</h2>
+        <p>Henkil&ouml;tietoja ei luovuteta kolmansille osapuolille markkinointitarkoituksiin. Tietoja voidaan luovuttaa:</p>
+        <ul>
+            <li>Lakis&auml;&auml;teisten velvoitteiden nojalla viranomaisille</li>
+            <li>Palveluntarjoajille, jotka k&auml;sittelev&auml;t tietoja puolestamme (esim. kirjanpito, IT-palvelut)</li>
+        </ul>
+        <p>Tietoja ei siirret&auml; EU/ETA-alueen ulkopuolelle ilman asianmukaisia suojatoimenpiteit&auml;.</p>
+
+        <h2>8. Rekister&ouml;idyn oikeudet</h2>
+        <p>Sinulla on EU:n tietosuoja-asetuksen mukaiset seuraavat oikeudet:</p>
+        <ul>
+            <li><strong>Tarkastusoikeus:</strong> Oikeus tarkastaa, mit&auml; tietoja sinusta on tallennettu rekisteriin.</li>
+            <li><strong>Korjausoikeus:</strong> Oikeus vaatia virheellisten tai puutteellisten tietojen korjaamista.</li>
+            <li><strong>Poisto-oikeus:</strong> Oikeus pyyt&auml;&auml; tietojesi poistamista rekisterist&auml; ("oikeus tulla unohdetuksi"), ellei tietojen s&auml;ilytt&auml;miselle ole lakis&auml;&auml;teist&auml; perustetta.</li>
+            <li><strong>K&auml;sittelyn rajoittaminen:</strong> Oikeus pyyt&auml;&auml; tietojen k&auml;sittelyn rajoittamista tietyiss&auml; tilanteissa.</li>
+            <li><strong>Tietojen siirrett&auml;vyys:</strong> Oikeus saada toimittamasi tiedot koneluettavassa muodossa.</li>
+            <li><strong>Vastustusoikeus:</strong> Oikeus vastustaa tietojen k&auml;sittely&auml; oikeutetun edun perusteella.</li>
+            <li><strong>Suostumuksen peruuttaminen:</strong> Oikeus peruuttaa antamasi suostumus milloin tahansa.</li>
+        </ul>
+        <p>Pyynn&ouml;t tulee l&auml;hett&auml;&auml; kirjallisesti osoitteeseen <a href="mailto:info@nordicglobe.co">info@nordicglobe.co</a>. Pyynn&ouml;t k&auml;sitell&auml;&auml;n kuukauden kuluessa. Heid&auml;n on todistettava henkil&ouml;llisyytens&auml;.</p>
+        <p>Sinulla on my&ouml;s oikeus tehd&auml; valitus valvontaviranomaiselle:</p>
+        <div class="info-card">
+            <p><strong>Tietosuojavaltuutetun toimisto</strong></p>
+            <p>K&auml;yntiosoite: Lintulahdenkuja 4, 00530 Helsinki</p>
+            <p>Postiosoite: PL 800, 00531 Helsinki</p>
+            <p>S&auml;hk&ouml;posti: tietosuoja(at)om.fi</p>
+            <p>Puhelin: 029 566 6700</p>
+            <p>Verkkosivu: <a href="https://tietosuoja.fi" target="_blank" rel="noopener">tietosuoja.fi</a></p>
+        </div>
+
+        <h2>9. Ev&auml;steet</h2>
+        <h3>Mit&auml; ev&auml;steet ovat?</h3>
+        <p>Ev&auml;steet (cookies) ovat pieni&auml; tekstitiedostoja, jotka tallentuvat selaimellesi verkkosivuston k&auml;yt&ouml;n yhteydess&auml;.</p>
+
+        <h3>K&auml;ytt&auml;m&auml;mme ev&auml;steet</h3>
+        <ul>
+            <li><strong>V&auml;ltt&auml;m&auml;tt&ouml;m&auml;t ev&auml;steet:</strong> Sivuston perusominaisuuksien toiminta (esim. ev&auml;stesuostumuksen muistaminen). N&auml;it&auml; ei voi poistaa k&auml;yt&ouml;st&auml;.</li>
+            <li><strong>Analytiikkaev&auml;steet:</strong> Google Analytics -ev&auml;steet, joiden avulla seuraamme sivuston k&auml;vij&auml;m&auml;&auml;ri&auml; ja k&auml;ytt&ouml;&auml; palvelumme kehitt&auml;miseksi. N&auml;m&auml; ladataan vain suostumuksellasi.</li>
+        </ul>
+
+        <h3>Ev&auml;steiden hallinta</h3>
+        <p>Voit hallita ev&auml;steit&auml; selaimesi asetuksista. Huomaathan, ett&auml; ev&auml;steiden est&auml;minen voi vaikuttaa sivuston toimintaan. Voit my&ouml;s peruuttaa ev&auml;stesuostumuksesi tyhjent&auml;m&auml;ll&auml; selaimesi tiedot.</p>
+
+        <h2>10. Rekisterin suojaus</h2>
+        <p>Rekisterin tiedot on suojattu asianmukaisesti. Digitaaliset aineistot on suojattu palomuurein, salasanoin ja muin teknisin keinoin. Tietoihin p&auml;&auml;sev&auml;t vain ne henkil&ouml;t, joilla on ty&ouml;teht&auml;viens&auml; puolesta siihen tarve.</p>
+
+        <h2>11. Yhteystiedot tietosuoja-asioissa</h2>
+        <p>Kaikissa henkil&ouml;tietojen k&auml;sittelyyn liittyviss&auml; kysymyksiss&auml; ja rekister&ouml;idyn oikeuksien k&auml;ytt&auml;misess&auml; voit olla yhteydess&auml;:</p>
+        <div class="info-card">
+            <p><strong>Nordic Globe Oy</strong></p>
+            <p>S&auml;hk&ouml;posti: <a href="mailto:info@nordicglobe.co">info@nordicglobe.co</a></p>
+            <p>Puhelin: 040 7770086</p>
+            <p>Peuraniitty 5 a 41, 02750 Espoo</p>
+        </div>
+
+        <p class="last-updated">T&auml;m&auml; tietosuojaseloste on p&auml;ivitetty viimeksi 29.3.2026. Pid&auml;t&auml;mme oikeuden p&auml;ivitt&auml;&auml; selostetta tarvittaessa.</p>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2009&ndash;2026 Nordic Globe Oy. Kaikki oikeudet pid&auml;tet&auml;&auml;n. | Y-tunnus: 2654015-7</p>
+        </div>
+    </footer>
+
+</body>
+</html>

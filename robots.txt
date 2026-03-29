@@ -1,0 +1,87 @@
+# Nordic Globe — nordicglobe.co
+# Robots.txt — SEO Optimized for all search engines & image crawlers
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /?s=
+Disallow: /search
+Crawl-delay: 1
+
+# Googlebot — full access, no delay
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /?s=
+
+# Googlebot Image — full image access
+User-agent: Googlebot-Image
+Allow: /img/
+Allow: /photos/
+Allow: /og/
+Allow: /*.webp$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /logo.png
+Allow: /favicon.png
+
+# Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+# BingPreview — image previews
+User-agent: BingPreview
+Allow: /img/
+Allow: /photos/
+Allow: /og/
+Allow: /*.webp$
+Allow: /*.jpg$
+
+# Yandex
+User-agent: Yandex
+Allow: /
+Crawl-delay: 2
+
+# YandexImages
+User-agent: YandexImages
+Allow: /img/
+Allow: /photos/
+Allow: /*.webp$
+Allow: /*.jpg$
+
+# DuckDuckBot
+User-agent: DuckDuckBot
+Allow: /
+
+# Ecosia
+User-agent: Ecosia
+Allow: /
+
+# Slurp (Yahoo)
+User-agent: Slurp
+Allow: /
+
+# Social media bots — allow image access
+User-agent: facebot
+Allow: /img/
+Allow: /og/
+
+User-agent: Twitterbot
+Allow: /img/
+Allow: /og/
+
+User-agent: LinkedInBot
+Allow: /img/
+Allow: /og/
+
+# Sitemaps
+Sitemap: https://nordicglobe.co/sitemap.xml
+Sitemap: https://nordicglobe.co/image-sitemap.xml
+
+# Host
+Host: https://nordicglobe.co

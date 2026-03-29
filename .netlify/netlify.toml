@@ -1,0 +1,103 @@
+plugins = []
+redirects = []
+
+[functions]
+
+[functions."*"]
+
+[build]
+publish = "/mnt/c/Users/kalil/Desktop/my-project/Yassin/clients/nordic-globe"
+publishOrigin = "default"
+base = "/mnt/c/Users/kalil/Desktop/my-project/Yassin/clients/nordic-globe"
+
+[build.environment]
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]
+
+[[headers]]
+for = "/*"
+
+[headers.values]
+X-Frame-Options = "SAMEORIGIN"
+X-Content-Type-Options = "nosniff"
+X-XSS-Protection = "1; mode=block"
+Referrer-Policy = "strict-origin-when-cross-origin"
+Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+Permissions-Policy = "camera=(), microphone=(), geolocation=(self)"
+X-Robots-Tag = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+Cross-Origin-Opener-Policy = "same-origin"
+Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://www.googletagmanager.com https://www.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; media-src 'self'; connect-src 'self' https://www.google-analytics.com; frame-src 'self' https://www.google.com"
+
+[[headers]]
+for = "/img/*"
+
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+Vary = "Accept"
+X-Content-Type-Options = "nosniff"
+Access-Control-Allow-Origin = "*"
+
+[[headers]]
+for = "/photos/*"
+
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+Vary = "Accept"
+X-Content-Type-Options = "nosniff"
+
+[[headers]]
+for = "/*.webp"
+
+[headers.values]
+Content-Type = "image/webp"
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/*.jpg"
+
+[headers.values]
+Content-Type = "image/jpeg"
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/*.png"
+
+[headers.values]
+Content-Type = "image/png"
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/*.svg"
+
+[headers.values]
+Content-Type = "image/svg+xml"
+Cache-Control = "public, max-age=86400"
+
+[[headers]]
+for = "/og/*"
+
+[headers.values]
+Cache-Control = "public, max-age=86400"
+Access-Control-Allow-Origin = "*"
+
+[[headers]]
+for = "/*.html"
+
+[headers.values]
+Cache-Control = "public, max-age=3600, must-revalidate"
+
+[[headers]]
+for = "/bg/*"
+
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"

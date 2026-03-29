@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d2b4a"/>
+      <stop offset="100%" style="stop-color:#1a3a6b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <line x1="0" y1="0" x2="1200" y2="630" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  <line x1="1200" y1="0" x2="0" y2="630" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  <rect x="60" y="60" width="1080" height="510" rx="20" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <!-- Location pin icon -->
+  <circle cx="600" cy="190" r="50" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="3"/>
+  <circle cx="600" cy="185" r="12" fill="none" stroke="#14F195" stroke-width="3"/>
+  <path d="M600 170 C590 170 582 178 582 188 C582 200 600 215 600 215 C600 215 618 200 618 188 C618 178 610 170 600 170Z" fill="none" stroke="#14F195" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Main text -->
+  <text x="600" y="320" font-family="Arial, Helvetica, sans-serif" font-size="60" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Siivouspalvelu Helsinki</text>
+  <!-- Subtitle -->
+  <text x="600" y="375" font-family="Arial, Helvetica, sans-serif" font-size="30" fill="rgba(255,255,255,0.75)" text-anchor="middle">Nordic Globe</text>
+  <!-- Divider -->
+  <rect x="520" y="410" width="160" height="3" rx="2" fill="#14F195" opacity="0.6"/>
+  <!-- URL -->
+  <text x="600" y="560" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="rgba(255,255,255,0.4)" text-anchor="middle">nordicglobe.co</text>
+</svg>

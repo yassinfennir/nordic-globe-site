@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Ads -kampanjaopas — Nordic Globe</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#0a1628">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1877F2;
+            --primary-dark: #1260cc;
+            --green: #14F195;
+            --orange: #f59e0b;
+            --red: #ef4444;
+            --dark: #0a0a0f;
+            --dark-blue: #0f1a2e;
+            --dark-card: #111827;
+            --white: #ffffff;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--dark);
+            color: rgba(255,255,255,0.85);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { text-decoration: none; color: var(--green); transition: color 0.3s; }
+        a:hover { color: #0fb97a; }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; color: var(--white); }
+
+        /* Nav */
+        .nav-simple {
+            background: var(--dark); padding: 18px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            position: sticky; top: 0; z-index: 100;
+            backdrop-filter: blur(16px);
+        }
+        .nav-simple .container {
+            max-width: 1200px; margin: 0 auto; padding: 0 24px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-simple img { height: 38px; }
+        .nav-simple a.back-link {
+            color: rgba(255,255,255,0.7); font-size: 0.9rem;
+            display: flex; align-items: center; gap: 6px;
+        }
+        .nav-simple a.back-link:hover { color: var(--green); }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-blue) 100%);
+            padding: 80px 0 60px; text-align: center;
+            border-bottom: 1px solid rgba(20,241,149,0.1);
+        }
+        .hero h1 { font-size: 2.6rem; font-weight: 700; margin-bottom: 12px; }
+        .hero h1 span { color: var(--green); }
+        .hero p { color: rgba(255,255,255,0.6); font-size: 1.05rem; max-width: 650px; margin: 0 auto; }
+        .badge { display: inline-block; background: rgba(20,241,149,0.1); color: var(--green); font-size: 0.78rem; font-weight: 600; padding: 6px 16px; border-radius: 50px; margin-bottom: 18px; border: 1px solid rgba(20,241,149,0.2); text-transform: uppercase; letter-spacing: 0.05em; }
+
+        /* TOC */
+        .toc { max-width: 960px; margin: -30px auto 0; padding: 0 24px; position: relative; z-index: 10; }
+        .toc-inner {
+            background: var(--dark-card); border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius-lg); padding: 32px 36px;
+        }
+        .toc h3 { font-size: 1rem; margin-bottom: 16px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+        .toc ol { margin-left: 20px; }
+        .toc li { margin-bottom: 8px; }
+        .toc a { color: rgba(255,255,255,0.7); font-size: 0.95rem; }
+        .toc a:hover { color: var(--green); }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .content { max-width: 960px; margin: 0 auto; padding: 60px 24px 80px; }
+
+        /* Campaign Section */
+        .campaign {
+            margin-bottom: 64px; padding-top: 32px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+        .campaign:first-child { border-top: none; }
+        .campaign-header { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+        .campaign-icon {
+            width: 56px; height: 56px; border-radius: var(--radius-md);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; color: var(--white); flex-shrink: 0;
+        }
+        .campaign-icon.search { background: linear-gradient(135deg, #4285F4, #1a73e8); }
+        .campaign-icon.maps { background: linear-gradient(135deg, #34A853, #1e8e3e); }
+        .campaign-icon.budget { background: linear-gradient(135deg, #f59e0b, #d97706); }
+
+        .campaign h2 { font-size: 1.6rem; font-weight: 700; }
+
+        /* Block / card */
+        .block {
+            background: var(--dark-card);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: var(--radius-md);
+            padding: 24px 28px;
+            margin-bottom: 16px;
+        }
+        .block h4 { font-size: 1rem; font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+        .block p, .block li { color: rgba(255,255,255,0.7); font-size: 0.93rem; }
+        .block ul, .block ol { margin: 8px 0 0 24px; }
+        .block li { margin-bottom: 6px; }
+
+        .sub-label { font-size: 0.78rem; font-weight: 600; color: var(--green); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; display: block; margin-top: 16px; }
+
+        /* Copyable text */
+        .copy-block {
+            background: rgba(20,241,149,0.04);
+            border: 1px solid rgba(20,241,149,0.12);
+            border-radius: var(--radius-sm);
+            padding: 16px 20px; margin: 12px 0;
+            position: relative; font-size: 0.92rem;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.6; white-space: pre-wrap;
+            cursor: pointer;
+        }
+        .copy-block::after {
+            content: "KOPIOI"; position: absolute; top: 8px; right: 10px;
+            font-size: 0.65rem; font-weight: 700; letter-spacing: 0.06em;
+            color: var(--green); background: rgba(20,241,149,0.08);
+            padding: 3px 10px; border-radius: 4px;
+        }
+        .copy-block:hover { border-color: rgba(20,241,149,0.3); }
+        .copy-block.copied::after { content: "KOPIOITU \u2713"; }
+
+        .info-card {
+            background: rgba(24,119,242,0.06);
+            border: 1px solid rgba(24,119,242,0.15);
+            border-radius: var(--radius-md);
+            padding: 20px 24px; margin: 16px 0;
+        }
+        .info-card p { margin-bottom: 4px; color: rgba(255,255,255,0.75); font-size: 0.93rem; }
+        .info-card strong { color: var(--white); }
+
+        .warn-card {
+            background: rgba(239,68,68,0.06);
+            border: 1px solid rgba(239,68,68,0.15);
+            border-radius: var(--radius-md);
+            padding: 20px 24px; margin: 16px 0;
+        }
+        .warn-card p { margin-bottom: 4px; color: rgba(255,255,255,0.75); font-size: 0.93rem; }
+        .warn-card strong { color: var(--red); }
+
+        /* Keywords styling */
+        .kw { display: inline-block; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 3px 10px; margin: 3px 4px 3px 0; font-size: 0.85rem; color: rgba(255,255,255,0.8); font-family: 'DM Sans', monospace; }
+        .kw.exact { border-color: rgba(20,241,149,0.25); color: var(--green); }
+        .kw.phrase { border-color: rgba(24,119,242,0.25); color: #60a5fa; }
+        .kw.negative { border-color: rgba(239,68,68,0.25); color: var(--red); text-decoration: line-through; }
+
+        /* Budget table */
+        .budget-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+        .budget-table th, .budget-table td {
+            padding: 12px 16px; text-align: left; font-size: 0.9rem;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .budget-table th { color: rgba(255,255,255,0.5); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; }
+        .budget-table td { color: rgba(255,255,255,0.75); }
+        .budget-table .total td { border-top: 2px solid rgba(20,241,149,0.2); font-weight: 700; color: var(--white); }
+
+        /* Ad preview */
+        .ad-preview {
+            background: var(--white); border-radius: var(--radius-md);
+            padding: 24px 28px; margin: 16px 0; color: #1a1a1a;
+        }
+        .ad-preview .ad-url { font-size: 0.82rem; color: #006621; margin-bottom: 4px; }
+        .ad-preview .ad-headline { font-size: 1.15rem; color: #1a0dab; font-weight: 600; margin-bottom: 6px; cursor: pointer; }
+        .ad-preview .ad-headline:hover { text-decoration: underline; }
+        .ad-preview .ad-desc { font-size: 0.88rem; color: #545454; line-height: 1.5; }
+        .ad-preview .ad-ext { margin-top: 10px; font-size: 0.82rem; color: #006621; }
+        .ad-preview .ad-badge { display: inline-block; font-size: 0.7rem; font-weight: 700; color: #006621; border: 1px solid #006621; border-radius: 3px; padding: 1px 5px; margin-right: 6px; }
+
+        /* Footer */
+        .footer {
+            background: var(--dark); color: rgba(255,255,255,0.4);
+            padding: 40px 0; text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            font-size: 0.84rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 60px 0 40px; }
+            .hero h1 { font-size: 1.8rem; }
+            .toc-inner { padding: 24px 20px; }
+            .content { padding: 40px 16px 60px; }
+            .block { padding: 18px 16px; }
+            .campaign-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .ad-preview { padding: 16px 18px; }
+            .budget-table th, .budget-table td { padding: 8px 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav-simple">
+        <div class="container">
+            <a href="/"><img src="logo-icon.png" alt="Nordic Globe" loading="lazy"></a>
+            <a href="/" class="back-link"><i class="fa-solid fa-arrow-left"></i> Takaisin etusivulle</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="badge"><i class="fa-brands fa-google"></i> Google Ads</div>
+            <h1>Google Ads <span>Campaign Setup</span></h1>
+            <p>Valmis kampanjakonfiguraatio Nordic Globe Oy:lle. Kaikki avainsanat, mainostekstit ja asetukset valmiina kopioitavaksi Google Adsiin.</p>
+        </div>
+    </section>
+
+    <div class="toc">
+        <div class="toc-inner">
+            <h3><i class="fa-solid fa-list"></i> Sis&auml;llys</h3>
+            <ol>
+                <li><a href="#kampanja1">Kampanja 1: Search &mdash; Myym&auml;l&auml;siivous (3,50 &euro;/pv)</a></li>
+                <li><a href="#kampanja2">Kampanja 2: Google Maps / Local (2,00 &euro;/pv)</a></li>
+                <li><a href="#laajennukset">Mainoslaajennukset (Extensions)</a></li>
+                <li><a href="#budjetti">Budjettiyhteenveto &amp; ROI-arviot</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <main class="content">
+
+        <!-- ==================== KAMPANJA 1: SEARCH ==================== -->
+        <div class="campaign" id="kampanja1">
+            <div class="campaign-header">
+                <div class="campaign-icon search"><i class="fa-solid fa-magnifying-glass"></i></div>
+                <div>
+                    <h2>Kampanja 1: Search &mdash; Siivouspalvelu</h2>
+                    <span style="color:rgba(255,255,255,0.5);font-size:0.88rem;">P&auml;iv&auml;budjetti: 3,50 &euro; &bull; Kuukausibudjetti: ~106 &euro;</span>
+                </div>
+            </div>
+
+            <div class="block">
+                <h4><i class="fa-solid fa-gear" style="color:var(--green);"></i> Kampanja-asetukset</h4>
+                <div class="info-card">
+                    <p><strong>Kampanjatyyppi:</strong> Search</p>
+                    <p><strong>Verkot:</strong> Vain Google-haku (ei Display-verkkoa)</p>
+                    <p><strong>Sijainti:</strong> Suomi &mdash; Espoo, Helsinki, Vantaa, Tampere, Turku, Oulu (+25 km s&auml;de)</p>
+                    <p><strong>Kieli:</strong> Suomi, Englanti</p>
+                    <p><strong>Hintatarjousstrategia:</strong> Maximize Clicks (alkuvaihe) &rarr; Target CPA my&ouml;hemmin</p>
+                    <p><strong>P&auml;iv&auml;budjetti:</strong> 3,50 &euro;</p>
+                    <p><strong>Mainosaikataulu:</strong> Ma&ndash;Pe 06:00&ndash;20:00, La 08:00&ndash;16:00</p>
+                </div>
+            </div>
+
+            <!-- Ad Group 1 -->
+            <div class="block">
+                <h4><i class="fa-solid fa-layer-group" style="color:#60a5fa;"></i> Mainosryhm&auml; 1: Myym&auml;l&auml;siivous</h4>
+
+                <span class="sub-label">Exact match -avainsanat [tarkat]</span>
+                <div style="margin: 8px 0 16px;">
+                    <span class="kw exact">[myym&auml;l&auml;siivous]</span>
+                    <span class="kw exact">[myym&auml;l&auml;siivous helsinki]</span>
+                    <span class="kw exact">[myym&auml;l&auml;siivous espoo]</span>
+                    <span class="kw exact">[myym&auml;l&auml;siivous vantaa]</span>
+                    <span class="kw exact">[kaupan siivous]</span>
+                    <span class="kw exact">[liiketilan siivous]</span>
+                    <span class="kw exact">[myym&auml;l&auml;n siivouspalvelu]</span>
+                    <span class="kw exact">[retail cleaning finland]</span>
+                    <span class="kw exact">[store cleaning service]</span>
+                </div>
+
+                <span class="sub-label">Phrase match -avainsanat "lause"</span>
+                <div style="margin: 8px 0 16px;">
+                    <span class="kw phrase">"myym&auml;l&auml;siivous"</span>
+                    <span class="kw phrase">"myym&auml;l&auml;n siivous"</span>
+                    <span class="kw phrase">"kaupan siivouspalvelu"</span>
+                    <span class="kw phrase">"liiketilan siivous"</span>
+                    <span class="kw phrase">"retail cleaning"</span>
+                    <span class="kw phrase">"myym&auml;l&auml;siivous hinta"</span>
+                </div>
+
+                <div class="copy-block" onclick="copyText(this)">[myym&auml;l&auml;siivous]
+[myym&auml;l&auml;siivous helsinki]
+[myym&auml;l&auml;siivous espoo]
+[myym&auml;l&auml;siivous vantaa]
+[kaupan siivous]
+[liiketilan siivous]
+[myym&auml;l&auml;n siivouspalvelu]
+[retail cleaning finland]
+[store cleaning service]
+"myym&auml;l&auml;siivous"
+"myym&auml;l&auml;n siivous"
+"kaupan siivouspalvelu"
+"liiketilan siivous"
+"retail cleaning"
+"myym&auml;l&auml;siivous hinta"</div>
+            </div>
+
+            <!-- Ad Group 2 -->
+            <div class="block">
+                <h4><i class="fa-solid fa-layer-group" style="color:#60a5fa;"></i> Mainosryhm&auml; 2: Siivouspalvelu Helsinki</h4>
+
+                <span class="sub-label">Exact match -avainsanat [tarkat]</span>
+                <div style="margin: 8px 0 16px;">
+                    <span class="kw exact">[siivouspalvelu helsinki]</span>
+                    <span class="kw exact">[siivouspalvelu espoo]</span>
+                    <span class="kw exact">[siivouspalvelu vantaa]</span>
+                    <span class="kw exact">[siivousyritys helsinki]</span>
+                    <span class="kw exact">[ammattisiivous helsinki]</span>
+                    <span class="kw exact">[toimistosiivous helsinki]</span>
+                    <span class="kw exact">[porrassiivous helsinki]</span>
+                    <span class="kw exact">[siivousfirma espoo]</span>
+                    <span class="kw exact">[cleaning service helsinki]</span>
+                </div>
+
+                <span class="sub-label">Phrase match -avainsanat "lause"</span>
+                <div style="margin: 8px 0 16px;">
+                    <span class="kw phrase">"siivouspalvelu helsinki"</span>
+                    <span class="kw phrase">"siivousyritys helsinki"</span>
+                    <span class="kw phrase">"ammattisiivous espoo"</span>
+                    <span class="kw phrase">"toimistosiivous p&auml;&auml;kaupunkiseutu"</span>
+                    <span class="kw phrase">"siivousfirma helsinki"</span>
+                    <span class="kw phrase">"cleaning company helsinki"</span>
+                </div>
+
+                <div class="copy-block" onclick="copyText(this)">[siivouspalvelu helsinki]
+[siivouspalvelu espoo]
+[siivouspalvelu vantaa]
+[siivousyritys helsinki]
+[ammattisiivous helsinki]
+[toimistosiivous helsinki]
+[porrassiivous helsinki]
+[siivousfirma espoo]
+[cleaning service helsinki]
+"siivouspalvelu helsinki"
+"siivousyritys helsinki"
+"ammattisiivous espoo"
+"toimistosiivous p&auml;&auml;kaupunkiseutu"
+"siivousfirma helsinki"
+"cleaning company helsinki"</div>
+            </div>
+
+            <!-- Negative Keywords -->
+            <div class="block">
+                <h4><i class="fa-solid fa-ban" style="color:var(--red);"></i> Negatiiviset avainsanat (koko kampanja)</h4>
+                <p style="margin-bottom:12px;">Lis&auml;&auml; n&auml;m&auml; kampanjatason negatiivisiksi avainsanoiksi est&auml;&auml;ksesi turhan liikenteen:</p>
+                <div style="margin: 8px 0 16px;">
+                    <span class="kw negative">ilmainen</span>
+                    <span class="kw negative">ty&ouml;paikka</span>
+                    <span class="kw negative">ty&ouml;</span>
+                    <span class="kw negative">avoin ty&ouml;paikka</span>
+                    <span class="kw negative">palkka</span>
+                    <span class="kw negative">koulutus</span>
+                    <span class="kw negative">kurssi</span>
+                    <span class="kw negative">itse</span>
+                    <span class="kw negative">diy</span>
+                    <span class="kw negative">ohjeet</span>
+                    <span class="kw negative">vinkit</span>
+                    <span class="kw negative">kotisiivous itse</span>
+                    <span class="kw negative">siivousaineet</span>
+                    <span class="kw negative">siivousv&auml;lineet</span>
+                    <span class="kw negative">robotti-imuri</span>
+                    <span class="kw negative">halpa</span>
+                    <span class="kw negative">edullisin</span>
+                    <span class="kw negative">kokemuksia</span>
+                    <span class="kw negative">arvostelu</span>
+                </div>
+                <div class="copy-block" onclick="copyText(this)">ilmainen
+ty&ouml;paikka
+ty&ouml;
+avoin ty&ouml;paikka
+palkka
+koulutus
+kurssi
+itse
+diy
+ohjeet
+vinkit
+kotisiivous itse
+siivousaineet
+siivousv&auml;lineet
+robotti-imuri
+halpa
+edullisin
+kokemuksia
+arvostelu</div>
+            </div>
+
+            <!-- Ad Copy -->
+            <div class="block">
+                <h4><i class="fa-solid fa-pen-fancy" style="color:var(--green);"></i> Mainosteksti &mdash; Responsive Search Ad</h4>
+
+                <span class="sub-label">Otsikot (Headlines) &mdash; max 30 merkki&auml;</span>
+                <div class="copy-block" onclick="copyText(this)">Otsikko 1: Myym&auml;l&auml;siivous | Nordic Globe
+Otsikko 2: Ammattisiivous Koko Suomi
+Otsikko 3: Ilmainen Tarjous T&auml;n&auml;&auml;n
+Otsikko 4: Platinum AAA -Luokitus
+Otsikko 5: 2 500+ Tyytyv&auml;ist&auml; Asiakasta
+Otsikko 6: Toimisto- &amp; Porrassiivous
+Otsikko 7: Siivouspalvelu Helsingiss&auml;
+Otsikko 8: Yli 15 Vuoden Kokemus
+Otsikko 9: ISO 9001 Sertifioitu
+Otsikko 10: Pyyd&auml; Tarjous &mdash; 040 7770086
+Otsikko 11: Siivouspalvelu Espoossa
+Otsikko 12: Luotettava Siivousfirma
+Otsikko 13: Soita Nyt &mdash; Ilmainen Arvio
+Otsikko 14: Rakennussiivous Ammattilaiset
+Otsikko 15: Nopea &amp; Luotettava Palvelu</div>
+
+                <span class="sub-label">Kuvaukset (Descriptions) &mdash; max 90 merkki&auml;</span>
+                <div class="copy-block" onclick="copyText(this)">Kuvaus 1: Nordic Globe Oy &mdash; Ammattimainen myym&auml;l&auml;siivous, toimistosiivous ja porrassiivous. Yli 15 vuoden kokemus. Pyyd&auml; ilmainen tarjous!
+Kuvaus 2: Luotettava siivouspalvelu yrityksille. Platinum AAA, ISO 9001 &amp; 14001. 2 500+ tyytyv&auml;ist&auml; asiakasta koko Suomessa. Soita 040 7770086!
+Kuvaus 3: Siivouspalvelut Helsingiss&auml;, Espoossa ja Vantaalla. Myym&auml;l&auml;siivous, rakennussiivous, erikoissiivous. Tarjous 24h sis&auml;ll&auml;!
+Kuvaus 4: Ammattisiivous kaupan alalle ja yrityksille. Joustavat sopimukset, kilpailukykyiset hinnat. Aloita t&auml;n&auml;&auml;n!</div>
+
+                <span class="sub-label">Lopullinen URL</span>
+                <div class="copy-block" onclick="copyText(this)">https://nordicglobe.co/myymalasiivous</div>
+
+                <span class="sub-label">N&auml;ytt&ouml;polku</span>
+                <div class="copy-block" onclick="copyText(this)">nordicglobe.co/myymalasiivous</div>
+            </div>
+
+            <!-- Ad Preview -->
+            <div class="block">
+                <h4><i class="fa-solid fa-eye" style="color:var(--green);"></i> Mainoksen esikatselu (esimerkki)</h4>
+                <div class="ad-preview">
+                    <div class="ad-url"><span class="ad-badge">Mainos</span>nordicglobe.co/myymalasiivous</div>
+                    <div class="ad-headline">Myym&auml;l&auml;siivous | Nordic Globe &mdash; Ilmainen Tarjous T&auml;n&auml;&auml;n</div>
+                    <div class="ad-desc">Nordic Globe Oy &mdash; Ammattimainen myym&auml;l&auml;siivous, toimistosiivous ja porrassiivous. Yli 15 vuoden kokemus. Pyyd&auml; ilmainen tarjous!</div>
+                    <div class="ad-ext">
+                        <i class="fa-solid fa-phone" style="font-size:0.75rem;"></i> 040 7770086 &nbsp;|&nbsp;
+                        Myym&auml;l&auml;siivous &middot; Toimistosiivous &middot; Rakennussiivous &middot; Hinnat
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== KAMPANJA 2: MAPS / LOCAL ==================== -->
+        <div class="campaign" id="kampanja2">
+            <div class="campaign-header">
+                <div class="campaign-icon maps"><i class="fa-solid fa-map-location-dot"></i></div>
+                <div>
+                    <h2>Kampanja 2: Google Maps / Local</h2>
+                    <span style="color:rgba(255,255,255,0.5);font-size:0.88rem;">P&auml;iv&auml;budjetti: 2,00 &euro; &bull; Kuukausibudjetti: ~61 &euro;</span>
+                </div>
+            </div>
+
+            <div class="block">
+                <h4><i class="fa-solid fa-gear" style="color:var(--green);"></i> Kampanja-asetukset</h4>
+                <div class="info-card">
+                    <p><strong>Kampanjatyyppi:</strong> Performance Max (Local)</p>
+                    <p><strong>Tavoite:</strong> Local store visits and promotions</p>
+                    <p><strong>Google Business Profile:</strong> Linkitett&auml;v&auml; Nordic Globe Oy -profiiliin</p>
+                    <p><strong>Sijainti:</strong> Espoo, Helsinki, Vantaa (+20 km s&auml;de)</p>
+                    <p><strong>Kieli:</strong> Suomi, Englanti</p>
+                    <p><strong>P&auml;iv&auml;budjetti:</strong> 2,00 &euro;</p>
+                    <p><strong>Hintatarjousstrategia:</strong> Maximize Conversions</p>
+                </div>
+            </div>
+
+            <div class="block">
+                <h4><i class="fa-solid fa-image" style="color:#60a5fa;"></i> Asset-ryhm&auml; (lis&auml;&auml; Google Adsiin)</h4>
+
+                <span class="sub-label">Otsikot (lyhyet, max 30 merkki&auml;)</span>
+                <div class="copy-block" onclick="copyText(this)">Siivouspalvelu l&auml;hell&auml;si
+Nordic Globe | Ammattisiivous
+Myym&auml;l&auml;siivous Espoo
+Pyyd&auml; ilmainen tarjous nyt</div>
+
+                <span class="sub-label">Pitk&auml;t otsikot (max 90 merkki&auml;)</span>
+                <div class="copy-block" onclick="copyText(this)">Nordic Globe Oy &mdash; Ammattimainen siivouspalvelu Espoossa, Helsingiss&auml; ja Vantaalla
+Myym&auml;l&auml;siivous, toimistosiivous ja porrassiivous &mdash; Pyyd&auml; ilmainen tarjous t&auml;n&auml;&auml;n!</div>
+
+                <span class="sub-label">Kuvaukset</span>
+                <div class="copy-block" onclick="copyText(this)">Luotettava siivouspalvelu yrityksille. Platinum AAA. 2 500+ asiakasta. Soita 040 7770086!
+Ammattimainen myym&auml;l&auml;- ja toimistosiivous p&auml;&auml;kaupunkiseudulla. Tarjous 24h sis&auml;ll&auml;.</div>
+
+                <span class="sub-label">Kuvat</span>
+                <p>Lis&auml;&auml; v&auml;hint&auml;&auml;n 3 kuvaa:</p>
+                <ul>
+                    <li>Siivousty&ouml;ntekij&auml; myym&auml;l&auml;ss&auml; (landscape 1200&times;628)</li>
+                    <li>Nordic Globe -tiimi (square 1200&times;1200)</li>
+                    <li>Logo (1200&times;1200, l&auml;pin&auml;kyv&auml; tausta)</li>
+                </ul>
+
+                <span class="sub-label">Lopullinen URL</span>
+                <div class="copy-block" onclick="copyText(this)">https://nordicglobe.co</div>
+            </div>
+        </div>
+
+        <!-- ==================== MAINOSLAAJENNUKSET ==================== -->
+        <div class="campaign" id="laajennukset">
+            <div class="campaign-header">
+                <div class="campaign-icon search"><i class="fa-solid fa-puzzle-piece"></i></div>
+                <div>
+                    <h2>Mainoslaajennukset (Extensions)</h2>
+                    <span style="color:rgba(255,255,255,0.5);font-size:0.88rem;">Lis&auml;&auml; tilitasolla &mdash; k&auml;ytet&auml;&auml;n molemmissa kampanjoissa</span>
+                </div>
+            </div>
+
+            <!-- Sitelinks -->
+            <div class="block">
+                <h4><i class="fa-solid fa-link" style="color:var(--green);"></i> Sitelink-laajennukset</h4>
+                <div class="copy-block" onclick="copyText(this)">Sitelink 1:
+  Otsikko: Myym&auml;l&auml;siivous
+  Kuvaus 1: Ammattisiivous kaupoille ja liikkeille
+  Kuvaus 2: Joustava palvelu, kilpailukykyiset hinnat
+  URL: https://nordicglobe.co/myymalasiivous
+
+Sitelink 2:
+  Otsikko: Toimistosiivous
+  Kuvaus 1: Puhdas toimisto parantaa tuottavuutta
+  Kuvaus 2: S&auml;&auml;nn&ouml;llinen yll&auml;pitosiivous yrityksille
+  URL: https://nordicglobe.co/toimistosiivous
+
+Sitelink 3:
+  Otsikko: Rakennussiivous
+  Kuvaus 1: Rakennusj&auml;lkeinen siivous ammattimaisesti
+  Kuvaus 2: Luovutussiivous ja loppusiivous
+  URL: https://nordicglobe.co/rakennussiivous
+
+Sitelink 4:
+  Otsikko: Pyyd&auml; tarjous
+  Kuvaus 1: Ilmainen ja sitomaton tarjous 24h sis&auml;ll&auml;
+  Kuvaus 2: Soita tai l&auml;het&auml; viesti
+  URL: https://nordicglobe.co/ota-yhteytta</div>
+            </div>
+
+            <!-- Callouts -->
+            <div class="block">
+                <h4><i class="fa-solid fa-bullhorn" style="color:#60a5fa;"></i> Callout-laajennukset</h4>
+                <div class="copy-block" onclick="copyText(this)">Platinum AAA -luokitus
+Yli 15 vuoden kokemus
+2 500+ tyytyv&auml;ist&auml; asiakasta
+ISO 9001 &amp; 14001
+Ilmainen tarjous 24h
+Palvelemme koko Suomessa
+Joustavat sopimukset
+Tilaajavastuu.fi-j&auml;sen</div>
+            </div>
+
+            <!-- Call extension -->
+            <div class="block">
+                <h4><i class="fa-solid fa-phone" style="color:var(--green);"></i> Puhelinlaajennus (Call)</h4>
+                <div class="info-card">
+                    <p><strong>Puhelinnumero:</strong> +358 40 7770086</p>
+                    <p><strong>Maa:</strong> Suomi (+358)</p>
+                    <p><strong>N&auml;ytt&ouml;aika:</strong> Ma&ndash;Pe 07:00&ndash;18:00</p>
+                </div>
+            </div>
+
+            <!-- Location extension -->
+            <div class="block">
+                <h4><i class="fa-solid fa-location-dot" style="color:var(--green);"></i> Sijaintilaajennus (Location)</h4>
+                <div class="info-card">
+                    <p><strong>Yhdist&auml;:</strong> Google Business Profile &rarr; Nordic Globe Oy</p>
+                    <p><strong>Osoite:</strong> Peuraniitty 5 a 41, 02750 Espoo</p>
+                    <p>Sijaintilaajennus n&auml;ytt&auml;&auml; yrityksen osoitteen ja kartan mainoksessa.</p>
+                </div>
+            </div>
+
+            <!-- Structured snippets -->
+            <div class="block">
+                <h4><i class="fa-solid fa-list-check" style="color:#60a5fa;"></i> Structured Snippets</h4>
+                <div class="copy-block" onclick="copyText(this)">Otsikko: Palvelut
+Arvot: Myym&auml;l&auml;siivous, Toimistosiivous, Porrassiivous, Rakennussiivous, Kotisiivous, Erikoissiivous, Ikkunapesut
+
+Otsikko: Alueet
+Arvot: Espoo, Helsinki, Vantaa, Tampere, Turku, Oulu, Jyv&auml;skyl&auml;</div>
+            </div>
+        </div>
+
+        <!-- ==================== BUDJETTI & ROI ==================== -->
+        <div class="campaign" id="budjetti">
+            <div class="campaign-header">
+                <div class="campaign-icon budget"><i class="fa-solid fa-chart-line"></i></div>
+                <div>
+                    <h2>Budjettiyhteenveto &amp; ROI-arviot</h2>
+                    <span style="color:rgba(255,255,255,0.5);font-size:0.88rem;">Kokonaisbudjetti: 5,50 &euro;/pv &bull; ~167 &euro;/kk</span>
+                </div>
+            </div>
+
+            <div class="block">
+                <h4><i class="fa-solid fa-euro-sign" style="color:var(--green);"></i> Kuukausittainen budjettierittely</h4>
+                <table class="budget-table">
+                    <thead>
+                        <tr>
+                            <th>Kampanja</th>
+                            <th>P&auml;iv&auml;budjetti</th>
+                            <th>Kk-budjetti</th>
+                            <th>Arvioitu CPC</th>
+                            <th>Klikkaukset/kk</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Search: Siivouspalvelu</td>
+                            <td>3,50 &euro;</td>
+                            <td>~106 &euro;</td>
+                            <td>0,80&ndash;1,50 &euro;</td>
+                            <td>70&ndash;130</td>
+                        </tr>
+                        <tr>
+                            <td>Maps / Local (PMax)</td>
+                            <td>2,00 &euro;</td>
+                            <td>~61 &euro;</td>
+                            <td>0,40&ndash;0,80 &euro;</td>
+                            <td>75&ndash;150</td>
+                        </tr>
+                        <tr class="total">
+                            <td><strong>Yhteens&auml;</strong></td>
+                            <td><strong>5,50 &euro;</strong></td>
+                            <td><strong>~167 &euro;</strong></td>
+                            <td>&mdash;</td>
+                            <td><strong>145&ndash;280</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="block">
+                <h4><i class="fa-solid fa-calculator" style="color:var(--green);"></i> ROI-arvio (konservatiivinen)</h4>
+                <table class="budget-table">
+                    <thead>
+                        <tr>
+                            <th>Mittari</th>
+                            <th>Alaraja</th>
+                            <th>Yl&auml;raja</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Klikkaukset/kk</td>
+                            <td>145</td>
+                            <td>280</td>
+                        </tr>
+                        <tr>
+                            <td>Konversioprosentti</td>
+                            <td>3 %</td>
+                            <td>7 %</td>
+                        </tr>
+                        <tr>
+                            <td>Yhteydenotot/kk</td>
+                            <td>4</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>Sopimuksen arvo (keskim.)</td>
+                            <td colspan="2">300&ndash;1 500 &euro;/kk (jatkuva sopimus)</td>
+                        </tr>
+                        <tr>
+                            <td>Uudet asiakkaat/kk (30 % close rate)</td>
+                            <td>1&ndash;2</td>
+                            <td>4&ndash;6</td>
+                        </tr>
+                        <tr class="total">
+                            <td><strong>Potentiaalinen kuukausituotto</strong></td>
+                            <td><strong>300&ndash;900 &euro;</strong></td>
+                            <td><strong>1 200&ndash;9 000 &euro;</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="info-card" style="margin-top:20px;">
+                    <p><strong>ROI-yhteenveto:</strong> 167 &euro;/kk mainoskululla voit saada 1&ndash;6 uutta jatkuvaa asiakasta kuukaudessa. Jo yksi uusi sopimus (300+ &euro;/kk) kattaa mainoskulut ja tuottaa voittoa ensimm&auml;isest&auml; kuukaudesta alkaen.</p>
+                </div>
+            </div>
+
+            <div class="block">
+                <h4><i class="fa-solid fa-lightbulb" style="color:var(--orange);"></i> Optimointivinkkej&auml;</h4>
+                <ul>
+                    <li><strong>Ensimm&auml;iset 2 viikkoa:</strong> &Auml;l&auml; tee muutoksia. Anna Googlen algoritmien oppia.</li>
+                    <li><strong>Viikko 3:</strong> Tarkista hakutermirapportti. Lis&auml;&auml; negatiivisia avainsanoja tarvittaessa.</li>
+                    <li><strong>Kuukausi 2:</strong> Vaihda hintatarjousstrategia &rarr; Target CPA, kun konversioseuranta toimii.</li>
+                    <li><strong>Kuukausi 3:</strong> Nosta budjettia kannattaville mainosryhmille. Pys&auml;yt&auml; heikot.</li>
+                    <li><strong>Jatkuva:</strong> P&auml;ivit&auml; mainostekstej&auml; 3&ndash;4 kk v&auml;lein. Testaa uusia otsikoita.</li>
+                </ul>
+            </div>
+
+            <div class="warn-card">
+                <p><strong><i class="fa-solid fa-triangle-exclamation"></i> T&auml;rke&auml;&auml;:</strong> Muista ottaa k&auml;ytt&ouml;&ouml;n konversioseuranta (Google Ads conversion tracking) ennen kampanjoiden k&auml;ynnist&auml;mist&auml;. Lis&auml;&auml; seurantakoodi kiitos.html-sivulle. Ilman konversioseurantaa et voi optimoida kampanjoita tehokkaasti.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Nordic Globe Oy &bull; T&auml;m&auml; opas on tarkoitettu sis&auml;iseen k&auml;ytt&ouml;&ouml;n</p>
+        </div>
+    </footer>
+
+    <script>
+    function copyText(el) {
+        var text = el.innerText || el.textContent;
+        text = text.replace(/KOPIOI$/, '').replace(/KOPIOITU \u2713$/, '').trim();
+        navigator.clipboard.writeText(text).then(function() {
+            el.classList.add('copied');
+            setTimeout(function() { el.classList.remove('copied'); }, 2000);
+        });
+    }
+    </script>
+
+</body>
+</html>

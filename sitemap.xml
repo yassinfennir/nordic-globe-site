@@ -1,0 +1,313 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:ns2="http://www.google.com/schemas/sitemap-image/1.1">
+
+    
+    
+    
+    <url>
+        <loc>https://nordicglobe.co/</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <html:link rel="alternate" hreflang="fi" href="https://nordicglobe.co/" />
+        <html:link rel="alternate" hreflang="fi-FI" href="https://nordicglobe.co/" />
+        <html:link rel="alternate" hreflang="sv" href="https://nordicglobe.co/sv/" />
+        <html:link rel="alternate" hreflang="sv-FI" href="https://nordicglobe.co/sv/" />
+        <html:link rel="alternate" hreflang="sv-SE" href="https://nordicglobe.co/sv/se/" />
+        <html:link rel="alternate" hreflang="no" href="https://nordicglobe.co/no/" />
+        <html:link rel="alternate" hreflang="da" href="https://nordicglobe.co/da/" />
+        <html:link rel="alternate" hreflang="en" href="https://nordicglobe.co/en/" />
+        <html:link rel="alternate" hreflang="x-default" href="https://nordicglobe.co/" />
+        <ns2:image>
+            <ns2:loc>https://nordicglobe.co/logo.png</ns2:loc>
+            <ns2:caption>Nordic Globe Oy – Siivouspalvelut Suomessa</ns2:caption>
+        </ns2:image>
+    </url>
+
+    
+    <url>
+        <loc>https://nordicglobe.co/myymalasiivous/</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
+        <html:link rel="alternate" hreflang="fi" href="https://nordicglobe.co/myymalasiivous/" />
+        <html:link rel="alternate" hreflang="fi-FI" href="https://nordicglobe.co/myymalasiivous/" />
+        <html:link rel="alternate" hreflang="sv" href="https://nordicglobe.co/sv/butiksstadning/" />
+        <html:link rel="alternate" hreflang="en" href="https://nordicglobe.co/en/retail-cleaning/" />
+        <html:link rel="alternate" hreflang="x-default" href="https://nordicglobe.co/myymalasiivous/" />
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/hinnat</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/tietoa-meista</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/yhteystiedot</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    
+    <url>
+        <loc>https://nordicglobe.co/siivous-helsinki-seo</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/siivous-kallio</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/siivous-kamppi</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    
+    
+    
+    <url>
+        <loc>https://nordicglobe.co/siivous-espoo</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <html:link rel="alternate" hreflang="fi" href="https://nordicglobe.co/siivous-espoo" />
+        <html:link rel="alternate" hreflang="en" href="https://nordicglobe.co/cleaning-espoo" />
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/siivous-helsinki</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <html:link rel="alternate" hreflang="fi" href="https://nordicglobe.co/siivous-helsinki" />
+        <html:link rel="alternate" hreflang="en" href="https://nordicglobe.co/cleaning-helsinki" />
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/siivous-vantaa</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <html:link rel="alternate" hreflang="fi" href="https://nordicglobe.co/siivous-vantaa" />
+        <html:link rel="alternate" hreflang="en" href="https://nordicglobe.co/cleaning-vantaa" />
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/siivous-turku</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <html:link rel="alternate" hreflang="fi" href="https://nordicglobe.co/siivous-turku" />
+        <html:link rel="alternate" hreflang="en" href="https://nordicglobe.co/cleaning-turku" />
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/siivous-tampere</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <html:link rel="alternate" hreflang="fi" href="https://nordicglobe.co/siivous-tampere" />
+        <html:link rel="alternate" hreflang="en" href="https://nordicglobe.co/cleaning-tampere" />
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/siivous-jyvaskyla</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <html:link rel="alternate" hreflang="fi" href="https://nordicglobe.co/siivous-jyvaskyla" />
+        <html:link rel="alternate" hreflang="en" href="https://nordicglobe.co/cleaning-jyvaskyla" />
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/siivous-kuopio</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <html:link rel="alternate" hreflang="fi" href="https://nordicglobe.co/siivous-kuopio" />
+        <html:link rel="alternate" hreflang="en" href="https://nordicglobe.co/cleaning-kuopio" />
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/siivous-lahti</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <html:link rel="alternate" hreflang="fi" href="https://nordicglobe.co/siivous-lahti" />
+        <html:link rel="alternate" hreflang="en" href="https://nordicglobe.co/cleaning-lahti" />
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/siivous-oulu</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <html:link rel="alternate" hreflang="fi" href="https://nordicglobe.co/siivous-oulu" />
+        <html:link rel="alternate" hreflang="en" href="https://nordicglobe.co/cleaning-oulu" />
+    </url>
+
+    
+    
+    
+    <url>
+        <loc>https://nordicglobe.co/cleaning-espoo</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/cleaning-helsinki</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/cleaning-vantaa</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/cleaning-turku</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/cleaning-tampere</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/cleaning-jyvaskyla</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/cleaning-kuopio</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/cleaning-lahti</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/cleaning-oulu</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    
+    
+    
+    <url>
+        <loc>https://nordicglobe.co/blog/best-cleaning-service-espoo</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/blog/paras-siivouspalvelu-espoo</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/blog/how-to-choose-cleaning-company-helsinki</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/blog/miten-valita-siivousyritys-helsinki</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    
+    <url>
+        <loc>https://nordicglobe.co/tietosuoja</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.4</priority>
+    </url>
+<url><loc>https://nordicglobe.co/toimistosiivous</loc><lastmod>2026-03-29</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url><url><loc>https://nordicglobe.co/myymalasiivous</loc><lastmod>2026-03-29</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url><url><loc>https://nordicglobe.co/siivous-toolo</loc><lastmod>2026-03-29</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url><url><loc>https://nordicglobe.co/siivous-pasila</loc><lastmod>2026-03-29</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+    <url>
+        <loc>https://nordicglobe.co/kotisiivous</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.90</priority>
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/rakennussiivous</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.90</priority>
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/ikkunanpesu</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.90</priority>
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/loppusiivous</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.90</priority>
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/ota-yhteytta</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/en/</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.70</priority>
+        <html:link rel="alternate" hreflang="en" href="https://nordicglobe.co/en/"/>
+        <html:link rel="alternate" hreflang="fi" href="https://nordicglobe.co/"/>
+        <html:link rel="alternate" hreflang="x-default" href="https://nordicglobe.co/"/>
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/sv/</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.70</priority>
+        <html:link rel="alternate" hreflang="sv" href="https://nordicglobe.co/sv/"/>
+        <html:link rel="alternate" hreflang="fi" href="https://nordicglobe.co/"/>
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/no/</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.60</priority>
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/da/</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.60</priority>
+    </url>
+    <url>
+        <loc>https://nordicglobe.co/kuvien-lisenssi/</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.30</priority>
+    </url>
+</urlset>

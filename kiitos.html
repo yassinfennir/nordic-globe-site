@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fi" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Kiitos | Nordic Globe</title>
+    <meta name="description" content="Kiitos yhteydenotostasi. Olemme vastaanottaneet viestisi ja otamme yhteyttä pian.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://nordicglobe.co/kiitos/">
+
+    <meta name="theme-color" content="#0a1628">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="logo-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+
+    <!-- Google Ads Conversion Tracking — PLACEHOLDER
+    ================================================
+    Replace with your actual Google Ads conversion snippet:
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-XXXXXXXXXX');
+        gtag('event', 'conversion', {'send_to': 'AW-XXXXXXXXXX/XXXXXXXXXXX'});
+    </script>
+    ================================================ -->
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #1877F2;
+            --primary-dark: #1260cc;
+            --green: #3b9bf5;
+            --green-light: #d6e8fa;
+            --dark: #0a1628;
+            --dark-blue: #0f2744;
+            --gray-100: #EAF4FF;
+            --gray-200: #d6e8fa;
+            --gray-300: #c5cdd8;
+            --gray-600: #5a6a7e;
+            --gray-800: #2c3e50;
+            --white: #ffffff;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+            --shadow-md: 0 8px 30px rgba(0,0,0,0.08);
+            --shadow-lg: 0 20px 60px rgba(0,0,0,0.12);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+        }
+
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--gray-800); background: var(--white); line-height: 1.7; overflow-x: hidden; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; line-height: 1.25; font-weight: 700; }
+        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+
+        /* HEADER */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            max-width: 1240px;
+            margin: 0 auto;
+            height: 78px;
+        }
+        .logo { display: flex; align-items: center; gap: 10px; }
+        .logo img { height: 50px; width: auto; }
+        .nav { display: flex; align-items: center; gap: 4px; }
+        .nav a { padding: 10px 18px; font-size: 0.93rem; font-weight: 500; color: var(--gray-800); border-radius: var(--radius-sm); }
+        .nav a:hover { background: var(--gray-100); color: var(--primary); }
+        .nav-cta { background: var(--primary) !important; color: var(--white) !important; padding: 12px 28px !important; border-radius: 50px !important; font-weight: 600 !important; display: flex; align-items: center; gap: 8px; }
+        .nav-cta:hover { background: var(--primary-dark) !important; transform: translateY(-1px); }
+
+        /* HAMBURGER */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1100;
+            background: none;
+            border: none;
+        }
+        .hamburger span {
+            display: block;
+            width: 26px;
+            height: 2.5px;
+            background: var(--dark);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        /* MOBILE NAV */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(255,255,255,0.99);
+            z-index: 1050;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .mobile-nav.active { display: flex; }
+        .mobile-nav a {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark);
+            padding: 14px 32px;
+            border-radius: var(--radius-sm);
+            width: 80%;
+            max-width: 320px;
+            text-align: center;
+        }
+        .mobile-nav a:hover { background: var(--gray-100); color: var(--primary); }
+        .mobile-nav .mobile-cta {
+            background: var(--primary);
+            color: var(--white) !important;
+            border-radius: 50px;
+            margin-top: 16px;
+        }
+        .mobile-nav .mobile-cta:hover { background: var(--primary-dark); }
+
+        /* THANK YOU SECTION */
+        .thank-you-section {
+            min-height: calc(100vh - 78px - 180px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 24px;
+            background: linear-gradient(180deg, var(--gray-100) 0%, var(--white) 100%);
+        }
+        .thank-you-card {
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-xl);
+            padding: 64px 48px;
+            box-shadow: var(--shadow-lg);
+        }
+        .check-icon {
+            width: 96px;
+            height: 96px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 32px;
+            animation: scaleIn 0.5s ease-out;
+        }
+        .check-icon i {
+            font-size: 2.8rem;
+            color: var(--white);
+        }
+        @keyframes scaleIn {
+            0% { transform: scale(0); opacity: 0; }
+            60% { transform: scale(1.15); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .thank-you-card h1 {
+            font-size: clamp(1.6rem, 4vw, 2.2rem);
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+        .thank-you-card .subtitle {
+            font-size: 1.05rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+        .thank-you-card .phone-notice {
+            background: var(--gray-100);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-md);
+            padding: 20px 24px;
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            justify-content: center;
+        }
+        .phone-notice i {
+            color: var(--primary);
+            font-size: 1.3rem;
+        }
+        .phone-notice span {
+            font-size: 0.95rem;
+            color: var(--gray-800);
+        }
+        .phone-notice a {
+            color: var(--primary);
+            font-weight: 700;
+        }
+        .phone-notice a:hover { color: var(--primary-dark); }
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            background: var(--primary);
+            color: var(--white);
+            transition: all 0.3s;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .btn-home:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(24,119,242,0.3);
+            color: var(--white);
+        }
+
+        /* FOOTER */
+        .footer { background: var(--dark); color: rgba(255,255,255,0.5); padding: 60px 24px 30px; text-align: center; }
+        .footer a { color: rgba(255,255,255,0.5); }
+        .footer a:hover { color: var(--white); }
+        .footer-brand { font-family: 'Poppins', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--white); margin-bottom: 16px; }
+        .footer-links { display: flex; justify-content: center; gap: 24px; margin: 20px 0; flex-wrap: wrap; }
+        .footer-bottom { margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.8rem; }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            .nav { display: none; }
+            .thank-you-card { padding: 48px 24px; }
+            .phone-notice { flex-direction: column; gap: 8px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="/" class="logo"><img src="logo.png" alt="Nordic Globe Oy" width="150" height="50"></a>
+            <nav class="nav">
+                <a href="/">Etusivu</a>
+                <a href="/#palvelut">Palvelut</a>
+                <a href="/hinnat">Hinnat</a>
+                <a href="/tietoa-meista">Tietoa meistä</a>
+                <a href="/ota-yhteytta">Ota yhteyttä</a>
+                <a href="tel:+358407770086" class="nav-cta"><i class="fa-solid fa-phone"></i> 040 7770086</a>
+            </nav>
+            <button class="hamburger" onclick="document.querySelector('.mobile-nav').classList.toggle('active');this.classList.toggle('active')" aria-label="Avaa valikko">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <nav class="mobile-nav">
+        <a href="/" onclick="document.querySelector('.mobile-nav').classList.remove('active');document.querySelector('.hamburger').classList.remove('active')">Etusivu</a>
+        <a href="/#palvelut" onclick="document.querySelector('.mobile-nav').classList.remove('active');document.querySelector('.hamburger').classList.remove('active')">Palvelut</a>
+        <a href="/hinnat" onclick="document.querySelector('.mobile-nav').classList.remove('active');document.querySelector('.hamburger').classList.remove('active')">Hinnat</a>
+        <a href="/tietoa-meista" onclick="document.querySelector('.mobile-nav').classList.remove('active');document.querySelector('.hamburger').classList.remove('active')">Tietoa meistä</a>
+        <a href="/ota-yhteytta" onclick="document.querySelector('.mobile-nav').classList.remove('active');document.querySelector('.hamburger').classList.remove('active')">Ota yhteyttä</a>
+        <a href="tel:+358407770086" class="mobile-cta"><i class="fa-solid fa-phone"></i> 040 7770086</a>
+    </nav>
+
+    <main>
+
+    <!-- Thank You Content -->
+    <section class="thank-you-section">
+        <div class="thank-you-card">
+            <div class="check-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h1>Kiitos yhteydenotostasi!</h1>
+            <p class="subtitle">Otamme yhteyttä 24 tunnin sisällä.</p>
+            <div class="phone-notice">
+                <i class="fa-solid fa-phone"></i>
+                <span>Puhelin: <a href="tel:+358407770086">+358 40 7770086</a></span>
+            </div>
+            <div class="phone-notice">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Sähköposti: <a href="mailto:info@nordicglobe.fi">info@nordicglobe.fi</a></span>
+            </div>
+            <a href="/" class="btn-home"><i class="fa-solid fa-arrow-left"></i> Takaisin etusivulle</a>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-brand">Nordic Globe Oy</div>
+        <p>Suomen luotettu ammattimainen siivouspalvelu vuodesta 2009.</p>
+        <div class="footer-links">
+            <a href="/">Etusivu</a>
+            <a href="/hinnat">Hinnat</a>
+            <a href="/tietoa-meista">Tietoa meistä</a>
+            <a href="/ota-yhteytta">Ota yhteyttä</a>
+            <a href="https://www.facebook.com/nordicglobe/" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i> Facebook</a>
+            <a href="https://www.instagram.com/nordic_globe_oy/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Nordic Globe Oy &middot; Y-tunnus: 2654015-7 &middot; Platinum AAA 2021 &middot; ISO 9001 &middot; ISO 14001</p>
+        </div>
+    </footer>
+
+</body>
+</html>

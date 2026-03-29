@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "nordic-globe",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-l", "3847", "C:/Users/kalil/Desktop/my-project/Yassin/clients/nordic-globe"],
+      "port": 3847
+    }
+  ]
+}

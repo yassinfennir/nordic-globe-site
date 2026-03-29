@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Sivua ei löydy | Nordic Globe Oy</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0a1628">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0a1628 0%, #0f2744 40%, #1a365d 70%, #1877F2 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 30% 20%, rgba(24,119,242,0.15) 0%, transparent 60%),
+                        radial-gradient(ellipse at 70% 80%, rgba(59,155,245,0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .error-container {
+            position: relative;
+            z-index: 1;
+            max-width: 640px;
+            width: 100%;
+        }
+
+        .error-logo {
+            margin-bottom: 32px;
+        }
+
+        .error-logo img {
+            height: 56px;
+            filter: drop-shadow(0 2px 8px rgba(0,10,40,0.4));
+        }
+
+        .error-code {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(5rem, 15vw, 10rem);
+            font-weight: 800;
+            line-height: 1;
+            background: linear-gradient(135deg, #ffffff 0%, #3b9bf5 50%, #1877F2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+            letter-spacing: -0.03em;
+        }
+
+        .error-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 2.25rem);
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #ffffff;
+        }
+
+        .error-description {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.7;
+            margin-bottom: 40px;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .error-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 48px;
+        }
+
+        .error-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .error-link--primary {
+            background: #1877F2;
+            color: #ffffff;
+            box-shadow: 0 4px 20px rgba(24,119,242,0.4);
+        }
+
+        .error-link--primary:hover {
+            background: #1260cc;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(24,119,242,0.5);
+        }
+
+        .error-link--secondary {
+            background: rgba(255,255,255,0.1);
+            color: #ffffff;
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .error-link--secondary:hover {
+            background: rgba(255,255,255,0.18);
+            transform: translateY(-2px);
+        }
+
+        .error-suggestions {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 28px 32px;
+            backdrop-filter: blur(10px);
+            text-align: left;
+        }
+
+        .error-suggestions h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .error-suggestions ul {
+            list-style: none;
+            display: grid;
+            gap: 8px;
+        }
+
+        .error-suggestions li a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            border-radius: 8px;
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            font-size: 0.93rem;
+            transition: all 0.25s ease;
+        }
+
+        .error-suggestions li a:hover {
+            background: rgba(255,255,255,0.08);
+            color: #ffffff;
+        }
+
+        .error-suggestions li a i {
+            color: #3b9bf5;
+            width: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .error-contact {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .error-contact a {
+            color: #3b9bf5;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .error-contact a:hover {
+            color: #ffffff;
+        }
+
+        @media (max-width: 480px) {
+            .error-links {
+                flex-direction: column;
+            }
+            .error-link {
+                justify-content: center;
+            }
+            .error-suggestions {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-logo">
+            <a href="/">
+                <img src="logo-icon.png" alt="Nordic Globe Oy">
+            </a>
+        </div>
+
+        <div class="error-code">404</div>
+
+        <h1 class="error-title">Sivua ei l&ouml;ydy</h1>
+
+        <p class="error-description">
+            Valitettavasti etsim&auml;&auml;si sivua ei l&ouml;ydy. Sivu on saatettu poistaa, siirt&auml;&auml; tai osoite on virheellinen.
+        </p>
+
+        <div class="error-links">
+            <a href="/" class="error-link error-link--primary">
+                <i class="fa-solid fa-house"></i> Etusivulle
+            </a>
+            <a href="/#palvelut" class="error-link error-link--secondary">
+                <i class="fa-solid fa-broom"></i> Palvelut
+            </a>
+            <a href="/#contact" class="error-link error-link--secondary">
+                <i class="fa-solid fa-envelope"></i> Ota yhteytt&auml;
+            </a>
+        </div>
+
+        <div class="error-suggestions">
+            <h3><i class="fa-solid fa-magnifying-glass"></i> Etsi sivustolta:</h3>
+            <ul>
+                <li><a href="/#suursiivous"><i class="fa-solid fa-broom"></i> Suursiivous</a></li>
+                <li><a href="/#porrassiivous"><i class="fa-solid fa-stairs"></i> Porrassiivous</a></li>
+                <li><a href="/#ikkunapesut"><i class="fa-solid fa-window-maximize"></i> Ikkunapesut</a></li>
+                <li><a href="/#rakennussiivous"><i class="fa-solid fa-helmet-safety"></i> Rakennussiivous</a></li>
+                <li><a href="/#erikoissiivous"><i class="fa-solid fa-shield-halved"></i> Erikoissiivous</a></li>
+                <li><a href="/#ravintolasiivous"><i class="fa-solid fa-utensils"></i> Ravintolasiivous</a></li>
+                <li><a href="/#arvostelut"><i class="fa-solid fa-star"></i> Arvostelut</a></li>
+                <li><a href="/#galleria"><i class="fa-solid fa-images"></i> Galleria</a></li>
+            </ul>
+        </div>
+
+        <div class="error-contact">
+            <p>Tarvitsetko apua? Soita <a href="tel:+358407770086">040 777 0086</a> tai l&auml;het&auml; viesti osoitteeseen <a href="mailto:info@nordicglobe.co">info@nordicglobe.co</a></p>
+        </div>
+    </div>
+
+    <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(()=>{});
+    }
+    </script>
+</body>
+</html>

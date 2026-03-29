@@ -1,0 +1,97 @@
+{
+  "name": "Nordic Globe – Siivouspalvelut Suomessa",
+  "short_name": "Nordic Globe",
+  "description": "Suomen johtava ammattisiivousyritys. Myymäläsiivous, toimistosiivous, kotisiivous ja rakennussiivous koko Suomessa. 2 500+ tyytyväistä asiakasta.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#0a1628",
+  "background_color": "#0a1628",
+  "lang": "fi",
+  "dir": "ltr",
+  "categories": ["business", "lifestyle"],
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "Pyydä tarjous",
+      "short_name": "Tarjous",
+      "url": "/ota-yhteytta",
+      "description": "Pyydä ilmainen tarjous siivouspalveluista"
+    },
+    {
+      "name": "Myymäläsiivous",
+      "short_name": "Myymäläsiivous",
+      "url": "/myymalasiivous",
+      "description": "Ammattitasoinen myymäläsiivous"
+    },
+    {
+      "name": "Toimistosiivous",
+      "short_name": "Toimistosiivous",
+      "url": "/toimistosiivous",
+      "description": "Toimistojen ammattilainen siivous"
+    },
+    {
+      "name": "Soita meille",
+      "short_name": "Soita",
+      "url": "tel:+358407770086",
+      "description": "Soita Nordic Globelle"
+    }
+  ],
+  "icons": [
+    {
+      "src": "logo-icon.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "logo-icon.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "logo-icon.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "logo-icon.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "logo-icon.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "logo-icon.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "logo-icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo-icon.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "logo-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
